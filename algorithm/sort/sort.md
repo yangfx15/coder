@@ -1,18 +1,16 @@
 目录
 
-> 1. 引言
->
-> 2. 入门题目
+> 1. 常见排序算法
+>2. 入门题目
 >    1. 排序链表
 >    2. 合并区间
->
 > 3. 进阶题目：
->    1. 数组中第k个最大元素
+>   1. 数组中第k个最大元素
 >    2. 寻找两个正序数组的中位数
 
 
 
-## 1. 引言
+## 1. 常见排序算法
 
 排序算法，常见的有插入排序【O(n^2)】，归并排序【O(nlogn)】，堆排序【O(nlogn)】以及快速排序【O(nlogn) -> O(n^2)】。
 
@@ -276,5 +274,68 @@ func maxHeapify(nums []int, i, headSize int) {
 
 图形表示如下：
 
-![fig1](https://assets.leetcode-cn.com/solution-static/4/4_fig1.png)
+![image-20230309111804177](img\image-20230309111804177.png)
+
+1次二分拆分：
+
+![image-20230309111918676](img\image-20230309111918676.png)
+
+2次二分拆分：
+
+![image-20230309112551595](img\image-20230309112551595.png)
+
+再次拆分以后，left = 3， right = 3，数组 A 二分切割完毕。这时，数组 A 和 B 的切割下标分别为 i = left = 3, j = mid - left = 2。
+
+![image-20230309114019032](img\image-20230309114019032.png)
+
+而中位数的结果，只会在这 `i, j, i-1, j-1` 几个数里面产生：
+
+1. 当数组总数为奇数时，中位数是左边分区（即 i-1 和 j-1）里面较大的那个；
+2. 当数组总数为偶数时，中位数是左边分区最大数和右边分区最小数的均值。
+
+除此之外，我们得考虑边界情况，比如 i, j 为 0 时，下标 i-1 或 j-1 不存在；当 i, j 为 m, n 时，下标 i 或 j 不存在。由于题目中说明了 m 和 n 不会同时为 0，所有 i 和 j 至少有一个存在。
+
+Go 代码如下：
+
+```go
+func findMedianSortedArrays(nums1, nums2 []int) float64 {
+   // 设置两个值，m+n
+   m, n := len(nums1), len(nums2)
+   if m > n {
+      return findMedianSortedArrays(nums2, nums1)
+   }
+   left, right, mid := 0, m, (m+n+1)/2
+   for left < right {
+      i := (left + right + 1) / 2
+      j := mid - i
+      // 若数组A下标的左边分区数 > 数组B下标及右边分区时
+      if nums1[i-1] > nums2[j] {
+         right = i - 1
+      } else {
+         left = i
+      }
+   }
+   i, j := left, mid-left
+   var leftMax float64
+   if i > 0 && j > 0 {
+      leftMax = float64(max(nums1[i-1], nums2[j-1]))
+   } else if i > 0 {
+      leftMax = float64(nums1[i-1])
+   } else {
+      leftMax = float64(nums2[j-1])
+   }
+   if (m+n)%2 == 1 {
+      return leftMax
+   }
+   var rightMin float64
+   if i < m && j < n {
+      rightMin = float64(min(nums1[i], nums2[j]))
+   } else if i < m {
+      rightMin = float64(nums1[i])
+   } else {
+      rightMin = float64(nums2[j])
+   }
+   return (rightMin+leftMax)/2
+}
+```
 
