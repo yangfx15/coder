@@ -172,3 +172,4 @@ rdb-save-incremental-fsync yes
 
 > 如果进行数据恢复时，既有 RDB 文件，又有 AOF 文件，我们应该先通过 AOF 文件来恢复数据，因为这能最大程度地保证数据的安全性。
 
+参考：https://cloud.tencent.com/developer/news/607786
