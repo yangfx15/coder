@@ -21,6 +21,7 @@ GitHub地址：https://github.com/yangfx15/coder
 > 1. 算法与数据结构
 >    1. 高频算法题Top系列
 >    2. 海量数据问题
+>    3. 智力测试题
 > 2. 计算机网络
 >    1. TCP/UDP 协议
 >    2. HTTP 与 HTTPs
@@ -272,9 +273,7 @@ GitHub地址：https://github.com/yangfx15/coder
 
 ### 1.2 海量数据问题
 
-#### 1）重复数搜索问题
-
-#### 2）Top 频率问题
+### 1.3 智力测试题
 
 
 
@@ -322,6 +321,7 @@ GitHub地址：https://github.com/yangfx15/coder
 
 - [Redis数据结构的底层原理](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484077&idx=1&sn=05b873433b81351db83db4d90a569192&chksm=ecac56a4dbdbdfb2562a08f47e9c2b240008903f6cd8b91df6cde69bdb2814908d771be846cb&scene=21#wechat_redirect)
 - [Redis IO多路复用](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484093&idx=1&sn=e173c294e8362e43fb36abf27d20cc30&chksm=ecac56b4dbdbdfa271cedbf3cd9e7c87ad7c7318d493f560b4fd814f277a3d50415ee8fd56f4&scene=21#wechat_redirect)
+- Redis持久化都说不明白？回去等消息吧~
 
 
 
@@ -399,6 +399,7 @@ GitHub地址：https://github.com/yangfx15/coder
 - [GO 垃圾回收](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484217&idx=1&sn=d464e95dcec6252b5e00a5f634a46892&chksm=ecac5730dbdbde26005ba864ab324a3a2c9b90f42c5ce037eb4f5eee36a4e55a4385421d9dd3&scene=21#wechat_redirect)
 - [并发才是时代的主题，goroutine 帮你快速实现](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247483844&idx=1&sn=09b1841623eaedd17babb6b408eb72d7&chksm=ecac55cddbdbdcdb818cf493920199d1a0ccd7fa25bfd010a55a078abc0772022a4af4eb29d0&scene=21#wechat_redirect)
 - [GPM 调度模型](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484182&idx=1&sn=6d3f54eea5622a2d7f6323cbb553fdd8&chksm=ecac571fdbdbde09cc8beb982e5df0caafdf5c87587cd3fbd69ca86c33724e9368ab957beac3&scene=21#wechat_redirect)
+- map都不知道，怎么写代码？
 
 
 
