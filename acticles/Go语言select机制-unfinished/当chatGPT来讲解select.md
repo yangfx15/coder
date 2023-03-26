@@ -1,3 +1,29 @@
+Go语言的select语句可以在多个通道之间等待并选择可用的通道执行操作。语法如下：
+
+``` go
+select {
+case <-chan1:
+  // 操作1
+case data := <-chan2:
+  // 操作2
+case chan3 <- data:
+  // 操作3
+default:
+  // 默认操作
+}
+```
+
+其工作方式如下：
+
+\- 如果有case子句中的通道已准备好，则按顺序执行满足条件的case子句。
+\- 如果多个case子句都已准备好，则随机选择一个执行。
+\- 如果没有任何通道准备好，则执行default子句（如果有）。
+\- 如果没有default子句，则select语句将阻塞，直到有通道准备好。
+
+select语句可以灵活地处理多个通道的并发操作，可以避免使用复杂的同步工具实现并发操作。
+
+
+
 ###  select 机制
 
 Go 语言里的 select 思想来源于网络 IO 模型中的 select，本质上也是 IO 多路复用。只是这里的 IO 是基于 channel 而不是基于网络套接字。
@@ -7,9 +33,10 @@ Go 语言里的 select 思想来源于网络 IO 模型中的 select，本质上�
 1. 每个 case 都必须是 channel；
 2. 所有被发送的 channel 表达式都会被求值；
 3. 如果有多个 case 可以执行，select 会随机公平地选出一个执行；
-4. 如果没有 default 语句，select 将阻塞，直到某个 channel 可以运行；
-5. 当 case 中的通道关闭时，case 每次都会读到 chan 对应数据类型的零值，导致死循环；
-6. 空 select 语句会死锁。
+4. 如果没有任何通道准备好，则执行 default 子句（如果有）；
+5. 如果没有 default 语句，select 将阻塞，直到某个 channel 可以运行；
+6. 当 case 中的通道关闭时，case 每次都会读到 chan 对应数据类型的零值，导致死循环；
+7. 空 select 语句会死锁。
 
 #### 2）特性验证
 
