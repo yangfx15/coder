@@ -1,6 +1,18 @@
+#!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 
-a = r'appId:11020 AND (userId:"oESpS5FC4a9z2PmXs_tfH_WaNxXk" OR userId:"oj0uN4uWQ4ipY_ErBSOn2AnMsnOU" OR userId:"oESpS5Hu63NzWuJmNHeaRl1YVgPo" OR userId:"oj0uN4mOe5dPHQTcdyvTHpCtXTSc" OR userId:"oESpS5GgqTz-WU9OaJzNrrCTPxJo" OR userId:"oESpS5NEPKzV8r2aM12AMBifpv2c")| select case when u1 = 'oESpS5FC4a9z2PmXs_tfH_WaNxXk' or u1 = 'oj0uN4uWQ4ipY_ErBSOn2AnMsnOU' then concat('姚','') when u1 = 'oESpS5Hu63NzWuJmNHeaRl1YVgPo' or u1 = 'oj0uN4mOe5dPHQTcdyvTHpCtXTSc' then concat('nan','') when u1 = 'oESpS5GgqTz-WU9OaJzNrrCTPxJo' then concat('开章','') when u1 = 'oESpS5NEPKzV8r2aM12AMBifpv2c' then concat('云龙','') else concat ('其他','') end as "用户ID",success_count as "成功数",total_count as "总数", CONCAT(cast(cast(success_count*100.0/total_count as decimal(10,2)) as varchar),'%') as "成功率"  from ((select userId as u1,count(distinct pageSession) as success_count where event='worldEnterRes' and enterWorldTimes='1' and code=0 group by userId) t1 join (select userId as u2,count(distinct pageSession) as total_count group by userId) t2 on u1=u2 )'
-b = r'appId:11020 AND (userId:"oESpS5FC4a9z2PmXs_tfH_WaNxXk" OR userId:"oj0uN4uWQ4ipY_ErBSOn2AnMsnOU" OR userId:"oESpS5Hu63NzWuJmNHeaRl1YVgPo" OR userId:"oj0uN4mOe5dPHQTcdyvTHpCtXTSc" OR userId:"oESpS5GgqTz-WU9OaJzNrrCTPxJo" OR userId:"oESpS5NEPKzV8r2aM12AMBifpv2c")| select case when u1 = 'oESpS5FC4a9z2PmXs_tfH_WaNxXk' or u1 = 'oj0uN4uWQ4ipY_ErBSOn2AnMsnOU' then concat('姚','') when u1 = 'oESpS5Hu63NzWuJmNHeaRl1YVgPo' or u1 = 'oj0uN4mOe5dPHQTcdyvTHpCtXTSc' then concat('nan','') when u1 = 'oESpS5GgqTz-WU9OaJzNrrCTPxJo' then concat('开章','') when u1 = 'oESpS5NEPKzV8r2aM12AMBifpv2c' then concat('云龙','') else concat ('其他','') end as "用户ID",success_count as "成功数",total_count as "总数", CONCAT(cast(cast(success_count*100.0/total_count as decimal(10,2)) as varchar),'%') as "成功率"  from ((select userId as u1,count(distinct pageSession) as success_count where event='worldEnterRes' and enterWorldTimes='1' and code=0 group by userId) t1 join (select userId as u2,count(distinct pageSession) as total_count group by userId) t2 on u1=u2 )'
+from enum import Enum
+@unique
+class Weekday(Enum):
+    Sun = 0
+    Mon = 1
+    Tue = 2
+    Wed = 3
+    Thu = 4
+    Fri = 5
+    Sat = 6
 
-print('equal:', a==b)
+day1 = Weekday.Mon
+print(day1)
+
+Weekday.Mon
