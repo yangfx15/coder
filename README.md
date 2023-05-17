@@ -1,6 +1,6 @@
 # coder
 
-Learning route of some programmer
+Learning route of a gopher
 
 
 
@@ -80,6 +80,7 @@ GitHub地址：https://github.com/yangfx15/coder
 > 15. 饮码江湖
 >     1. README
 >     2. 码间新闻
+>     3. 个人面经
 
 
 
@@ -273,7 +274,13 @@ GitHub地址：https://github.com/yangfx15/coder
 
 ### 1.2 海量数据问题
 
+* 经典海量数据问题
+
+
+
 ### 1.3 智力测试题
+
+* 整理一些不考智力的智力题
 
 
 
@@ -321,7 +328,7 @@ GitHub地址：https://github.com/yangfx15/coder
 
 - [Redis数据结构的底层原理](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484077&idx=1&sn=05b873433b81351db83db4d90a569192&chksm=ecac56a4dbdbdfb2562a08f47e9c2b240008903f6cd8b91df6cde69bdb2814908d771be846cb&scene=21#wechat_redirect)
 - [Redis IO多路复用](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484093&idx=1&sn=e173c294e8362e43fb36abf27d20cc30&chksm=ecac56b4dbdbdfa271cedbf3cd9e7c87ad7c7318d493f560b4fd814f277a3d50415ee8fd56f4&scene=21#wechat_redirect)
-- Redis持久化都说不明白？回去等消息吧~
+- Redis持久化都说不明白？那今天先到这吧~
 
 
 
@@ -400,13 +407,16 @@ GitHub地址：https://github.com/yangfx15/coder
 - [并发才是时代的主题，goroutine 帮你快速实现](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247483844&idx=1&sn=09b1841623eaedd17babb6b408eb72d7&chksm=ecac55cddbdbdcdb818cf493920199d1a0ccd7fa25bfd010a55a078abc0772022a4af4eb29d0&scene=21#wechat_redirect)
 - [GPM 调度模型](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484182&idx=1&sn=6d3f54eea5622a2d7f6323cbb553fdd8&chksm=ecac571fdbdbde09cc8beb982e5df0caafdf5c87587cd3fbd69ca86c33724e9368ab957beac3&scene=21#wechat_redirect)
 - map都不知道，怎么写代码？
+- 一文带你认识内存管理
 
 
 
-#### 4）Go-swagger 框架
+#### 4）周边常用框架
 
 - [Go-swagger 应用](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247483965&idx=1&sn=5d07d2df5a19db748e4646803e60cdd1&chksm=ecac5634dbdbdf22dcc63709cf627e03aa49ee21a8c990fe111fe5f4080e2d9553f2a2f09e41&scene=21#wechat_redirect)
 - [Swagger 自动生成 API 文档（开发者实用工具）](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484288&idx=1&sn=974a56eaa286c7c83c25b9c077e8388b&chksm=ecac5789dbdbde9fbf82682500f3c753d0538ed69e1d7bdc9d87a31eed8dca3f91334e2a56ab&scene=21#wechat_redirect)
+
+* gRPC响应ChatGPT流式问答
 
 
 
@@ -479,3 +489,12 @@ GitHub地址：https://github.com/yangfx15/coder
 - [要脸，还是要方便？](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247483917&idx=1&sn=5703164683f0a3dda4f7d560e83bc1f2&chksm=ecac5604dbdbdf128d8d288c0673ae0d5fd8d7c6974fdedc37b2d5001debafa0dae29a2337db&scene=21#wechat_redirect)
 - [PDD 事件看内卷](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247483986&idx=1&sn=9c28064604aa497271c6fa4eff70e9a6&chksm=ecac565bdbdbdf4da52b6c3027ce2d5f7bdfc1a1812a4d1c6bd3eb823fa86a2e902072241d5d&scene=21#wechat_redirect)
 
+* OpenAI 发布 GPT-4，有哪些技术上的优化或突破？
+
+
+
+### 15.3 面经
+
+富途
+
+* 一面：大厂面试都会问什么
