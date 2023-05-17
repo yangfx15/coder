@@ -2306,6 +2306,109 @@ print(L)
 
 只需要一行代码。
 
+再看`reduce`的用法。`reduce`把一个函数作用在一个序列`[x1, x2, x3, ...]`上，这个函数必须接收两个参数，`reduce`把结果继续和序列的下一个元素做累积计算，其效果就是：
+
+``` python
+reduce(f, [x1, x2, x3, x4]) = f(f(f(x1, x2), x3), x4)
+```
+
+比如对一个序列求和，就可以用 `reduce` 实现：
+
+``` python
+>>> from functools import reduce
+>>> def add(x, y):
+...     return x + y
+...
+>>> reduce(add, [1, 3, 5, 7, 9])
+25
+```
+
+当然求和运算可以直接用Python内建函数`sum()`，没必要动用`reduce`。
+
+但是如果要把序列`[1, 3, 5, 7, 9]`变换成整数`13579`，`reduce`就可以派上用场：
+
+``` python
+>>> from functools import reduce
+>>> def fn(x, y):
+...     return x * 10 + y
+...
+>>> reduce(fn, [1, 3, 5, 7, 9])
+13579
+```
+
+这个例子本身没多大用处，但是，如果考虑到字符串`str`也是一个序列，对上面的例子稍加改动，配合`map()`，我们就可以写出把`str`转换为`int`的函数：
+
+``` python
+>>> from functools import reduce
+>>> def fn(x, y):
+...     return x * 10 + y
+...
+>>> def char2num(s):
+...     digits = {'0': 0, '1': 1, '2': 2, '3': 3, '4': 4, '5': 5, '6': 6, '7': 7, '8': 8, '9': 9}
+...     return digits[s]
+...
+>>> reduce(fn, map(char2num, '13579'))
+13579
+```
+
+
+
+##### 练习1
+
+利用`map()`函数，把用户输入的不规范的英文名字，变为首字母大写，其他小写的规范名字。输入：`['adam', 'LISA', 'barT']`，输出：`['Adam', 'Lisa', 'Bart']`：
+
+``` python
+def normalize(name):
+    return name[0].upper()+name[1:].lower()
+```
+
+##### 测试
+
+``` python
+L1 = ['adam', 'LISA', 'barT']
+L2 = list(map(normalize, L1))
+print(L2)
+```
+
+
+
+##### 练习2
+
+Python提供的`sum()`函数可以接受一个list并求和，请编写一个`prod()`函数，可以接受一个list并利用`reduce()`求积：
+
+``` python
+from functools import reduce
+
+def prod(L):
+    def fn(x,y):
+        return x*y
+    return reduce(fn, L)
+```
+
+##### 测试
+
+``` python
+
+def prod(L):
+    pass
+
+print('3 * 5 * 7 * 9 =', prod([3, 5, 7, 9]))
+if prod([3, 5, 7, 9]) == 945:
+    print('测试成功!')
+else:
+    print('测试失败!')
+```
+
+
+
+##### 练习3
+
+利用`map`和`reduce`编写一个`str2float`函数，把字符串`'123.456'`转换成浮点数`123.456`：
+
+``` python
+
+```
+
 
 
 
