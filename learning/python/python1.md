@@ -785,6 +785,41 @@ tuple 陷阱，定义多元素和空元素时无歧义：
 
 
 
+**已命名元组（namedtuple）**
+
+``` python
+def max_category_value(r) -> tuple:
+    d={k: r[k] for k in r.keys()}
+    max_key =sorted(d,key=lambda x : d[x])[-1]
+    if d[max_key] > 1:
+        return (max_key, 1)
+    else:
+        # 打标结果小于2的统计忽略
+        return (max_key, 0)
+
+query_result = (1,0,1,0,1,0,1,0,1,0)
+
+stats_result={
+    "information_categorization":0,
+    "information_extraction":0,
+    "content_generation":0,
+    "content_rewriting":0,
+    "content_summarization":0,
+    "closed_ended_questions":0,
+    "open_ended_questions":0,
+    "chatting":0,
+    "inspiration":0,
+    "others":0,
+    }
+for r in query_result:
+    category_tuple=max_category_value(r)
+    stats_result[category_tuple[0]]+=category_tuple[1]
+
+print(stats_result)
+```
+
+
+
 ### 5）条件判断
 
 #### if、else、elif
