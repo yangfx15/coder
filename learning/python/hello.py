@@ -1,26 +1,18 @@
-from enum import Enum
-
-class LabelWidget(Enum):
-    yes_no = "yes_no"
-    flag = "flag"
-    likert = "likert"
-    category_flag = "category_flag"
-    domain_flag = "domain_flag"
-
-class Potato(Enum):
-    def __new__(cls, widget: LabelWidget):
-        obj.widget = widget
-        return obj
-    
-    spam = "spam", LabelWidget.flag
-    
-    @classmethod
-    def make(cls, num):
-        potatos = []
-        for i in range(num):
-            potatos.append(cls.__new__(cls))
-        return potatos
+class Message(object):
+    def __init__(self, name):
+        self.name = name
         
-all_potatos = Potato.make(5)
+m = Message('ssss')
+d = {'m1':m}
 
-print(all_potatos)
+value = d['m1']
+value.name = 'dfad'
+
+if d.get('m1'):
+    print('d m1 exist')
+
+if d.get('m2'):
+    print('d m2 exist')
+
+for k,v in d.items():
+    print(k,v.name)
