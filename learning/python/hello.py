@@ -1,18 +1,10 @@
-class Message(object):
-    def __init__(self, name):
-        self.name = name
-        
-m = Message('ssss')
-d = {'m1':m}
-
-value = d['m1']
-value.name = 'dfad'
-
-if d.get('m1'):
-    print('d m1 exist')
-
-if d.get('m2'):
-    print('d m2 exist')
-
-for k,v in d.items():
-    print(k,v.name)
+class Animal(object):
+    @property
+    def kind(self):
+        #为了和方法名做区分，在属性前面加一个下划线
+        return self._kind
+    @kind.setter
+    def kind(self, value):
+        if not isinstance(value, str):
+            raise ValueError('kind must be a str!')
+        self._kind = value
