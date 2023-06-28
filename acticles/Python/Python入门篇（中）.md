@@ -4,7 +4,6 @@
 > 2. 迭代与生成器
 > 3. 面向对象
 > 4. 错误处理
-> 5. 文件操作
 > 6. 总结
 
 
@@ -559,6 +558,67 @@ k.kind # cat，相当于调用 k.get_kind()
 
 
 
+#### 3）\__getattr__动态获取属性
+
+当我们调用不存在的方法或属性时，Python 会报错，如：
+
+``` python
+class Animal(object):
+    __slots__ = ('kind', 'name', 'sound')
+    def __init__(self, kind, name, sound):
+        self.name = kind
+        self.kind = name
+        self.sound = sound
+k = Animal('kitty', '猫', '喵喵')
+k.age # 报错，不存在该属性
+```
+
+如何避免这种情况呢？
+
+Python 提供了 `__getattr__()` 可以动态获取属性，我们修改以下 Animal 类：
+
+``` python
+class Animal(object):
+    __slots__ = ('kind', 'name', 'sound')
+    def __init__(self, kind, name, sound):
+        self.name = kind
+        self.kind = name
+        self.sound = sound
+    def __getattr__(self, attr):
+        if attr == 'age':
+            return 18
+
+k = Animal('kitty', '猫', '喵喵')
+k.age # 18
+```
+
+这样，获取不存在的属性时，我们也可以使 Python 不报错了。
+
+除此之外，`__getattr__` 最大的用途在于，我们可以动态获取用户的请求地址。比如，根据请求地址实现一个链式调用：
+
+``` python
+class Chain(object):
+    def __init__(self, path=''):
+        self._path = path
+
+    def __getattr__(self, path):
+        return Chain('%s/%s' % (self._path, path))
+
+    def __str__(self):
+        return self._path
+```
+
+打印对象的调用路径：
+
+``` python
+print(Chain().active.user.list)
+'/active/user/list'
+```
+
+这种方式可以实现 SDK 根据 URL 的动态变化而切换，而无需新增过多的接口监听。
+
+
+
 ### 3.4 多重继承
 
 不同于 Java 等编程语言只能单继承，Python 一个类可以有多个父类，即多重继承。
@@ -590,3 +650,150 @@ class Cat(Runnable, Mammal):
 
 
 
+### 3.5 枚举类
+
+在 Python 中，常量定义一般用大写变量声明，比如：
+
+``` python
+SUN = 0
+MON = 1
+...
+Sat = 6
+```
+
+而枚举类则是将相同属性的常量放在一个类里面，如：
+
+``` python
+from enum import Enum, unique
+
+@unique
+class Weekday(Enum):
+    Sun = 0
+    Mon = 1
+    Tue = 2
+    Wed = 3
+    Thu = 4
+    Fri = 5
+    Sat = 6
+```
+
+其中，装饰器 `unique` 可以避免枚举 key 重复。
+
+将一组具有相同特征的常量放在枚举类中，有很多好处。第一个好处就是遍历很方便：
+
+``` python
+for name, value in Weekday.__members__.items():
+    print(name, '->', value)
+# 打印结果：
+Sun -> Weekday.Sun
+Mon -> Weekday.Mon
+Tue -> Weekday.Tue
+Wed -> Weekday.Wed
+Thu -> Weekday.Thu
+Fri -> Weekday.Fri
+Sat -> Weekday.Sat
+```
+
+ 还可以随取随用：
+
+``` python
+print(Weekday.Tue) # Weekday.Tue
+print(Weekday.Tue.value) # 2
+print(Weekday(1)) # Weekday.Mon
+```
+
+
+
+## 4. 错误处理
+
+当我们在编写业务代码时，由于很多不可控的原因，代码可能会异常运行导致系统崩溃。
+
+此时，对内来说由于资源未释放，报错堆栈不明显等原因，会让系统的稳定性受到挑战；对外来说，如果用户的请求导致系统崩溃，用户的体验会非常差。
+
+所以，为了系统的健壮性考虑，我们必须要做错误处理。
+
+
+
+### 4.1 try/except/finally
+
+和 Java 语言一样，Python 内置了一套 `try...except...finally` 的错误处理方式，可以在代码中方便地获取异常信息。假设我们编写了一个除法函数：
+
+``` python
+func div(a, b):
+    try:
+        print('try...')
+        r = a / b # 假设b为0，会抛出异常
+        print('result:', r)
+    except ZeroDivisionError as e:
+        print('except:', e)
+    finally:
+        print('finally...')
+    print('END')
+```
+
+当某些代码可能会出错时，我们就可以用`try`来运行这段代码，即试着运行一下。
+
+如果执行出错，则后续代码不会继续执行，而是直接跳转至错误处理代码，即`except`语句块，捕获和处理异常。
+
+执行完`except`后，如果有`finally`语句块，则执行`finally`语句块，一般用作资源释放，比如数据库连接、文件资源释放等。
+
+Python所有的错误都是从`BaseException`类派生的，常见的错误类型和继承关系可以看官方文档：
+
+https://docs.python.org/3/library/exceptions.html#exception-hierarchy
+
+
+
+### 4.2 自定义错误
+
+如上述所示，为了防止除数为 0，我们还可以在入口处校验，如果除数是否为 0，则用 `raise` 主动抛出异常：
+
+``` python
+func div(a, b):
+    try:
+        print('try...')
+        if b==0:
+            raise ZeroDivisionError('divider cannot be 0')
+        r = a / b # 假设b为0，会抛出异常
+        print('result:', r)
+    except ZeroDivisionError as e:
+        print('except:', e)
+    finally:
+        print('finally...')
+    print('END')
+```
+
+这样做的好处是我们把代码异常变成了校验异常，可以定制化我们的异常信息，抛出自定义的 Error 类。
+
+这里肯定有同学会有疑问了，那我在编写代码时，记不住这么多 Error 类怎么办？
+
+其实很简单，Python 提供这么多错误类只是方便细化后使用，我们也可以用一些基本类进行错误抛出：
+
+``` python
+func div(a, b):
+    try:
+        if b == 0:
+            raise ValueError('divider cannot be 0')
+    except Except as e: #可以捕获所有的Error
+        print('except:', e)
+```
+
+这样，我们就可以捕获到所有的异常信息，进行错误处理了。
+
+
+
+## 5. 小结
+
+对于一个之前写过 Java 和 Go 的人来说，Python 上手其实还蛮快的，学了不到一个周就开始写项目了。但很多时候也会犯一些基本错误：比如 Python 作为一门动态语言，做声明时需要特别注意，拿一个实际场景对比。
+
+在 Go 语言下：
+
+``` go
+a := "123"
+a = 1 # 不允许赋值
+```
+
+而 Python 里面这样的赋值是允许的，所以在命名上尤其需要注意是否重名。
+
+但 Python 在数据和文件处理等方面非常强大，在 Go 里面需要反复转换的格式，在 Python 里可能仅需要一两行代码就可以搞定了，妥妥懒人福音：)
+
+敬请期待《Python 入门篇（下）》！
