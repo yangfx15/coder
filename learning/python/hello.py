@@ -1,14 +1,3 @@
-from enum import Enum, unique
-
-@unique
-class Weekday(Enum):
-    Sun = 0 # Sun的value被设定为0
-    Mon = 1
-    Tue = 2
-    Wed = 3
-    Thu = 4
-    Fri = 5
-    Sat = 6
-
-for name, member in Weekday.__members__.items():
-    print(name, '->', member)
+def application(env, start_resp):
+    start_resp('200 OK', [('Content-Type', 'text/html')])
+    return [b'<h1>Hello, Python Web</h1>']
