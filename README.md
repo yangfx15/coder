@@ -1,10 +1,12 @@
 # coder
 
-Learning route of a gopher
+Learning route of a backstage development programmer/gopher
 
 
 
-GitHub地址：https://github.com/yangfx15/coder
+GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a>
+
+> https://github.com/yangfx15/coder
 
 说明：学习路线中**未打上链接的知识点都还未完善**，⭐️和评论越多 ，更新越快哦~~
 
@@ -12,7 +14,7 @@ GitHub地址：https://github.com/yangfx15/coder
 
 学习路线图：
 
-![img](https://mmbiz.qpic.cn/mmbiz_png/pQBexpeYRE6wldmHiaibhKj7l9s4bFreicRlP8NvRAMvpSjGgomILfWYNgseiaTdxLwia6K8gAHyxKJ1RtnFuFzUchA/640?wx_fmt=png)
+![image-20230814171118235](img/image-20230814171118235.png)
 
  
 
@@ -47,11 +49,12 @@ GitHub地址：https://github.com/yangfx15/coder
 >    2. 设计模式
 > 8. 编程语言
 >    1. Go 语言基础与高级
->       1. 三个入门程序
->       2. Go 数据结构
+>       1. 入门
+>       2. Web应用
 >       3. 并发安全
 >       4. go-swagger框架
->    2. Java 语言基础与高级
+>    2. Python 语言基础与高级
+>       1. 入门
 > 9. 架构设计
 >    1. 架构优化
 >    2. 常见系统设计
@@ -60,9 +63,9 @@ GitHub地址：https://github.com/yangfx15/coder
 >       3. 网约车系统
 >       4. 网盘系统
 > 10. 分布式与高可用
->     1. CAP/BASE 理论
->     2. 分布式事务
->     3. 系统高可用设计
+>        1. CAP/BASE 理论
+>        2. 分布式事务
+>        3. 系统高可用设计
 > 11. 微服务
 >     1. 单体架构的演进
 >     2. 服务发现
@@ -79,7 +82,7 @@ GitHub地址：https://github.com/yangfx15/coder
 >     2. Typroa
 > 15. 饮码江湖
 >     1. README
->     2. 码间新闻
+>     2. 码间逸事
 >     3. 个人面经
 
 
@@ -88,19 +91,22 @@ GitHub地址：https://github.com/yangfx15/coder
 
 ### 1.1 高频算法题 Top 系列
 
-#### 1）排序类题目
+#### 1）<a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484365&idx=1&sn=d0a1195fa364ec9780132900fd21c90d&chksm=ecac57c4dbdbded26bbcb03a222f74cf60f99a668d6deaae11731bd075fed799cc3f5d65296d&token=55044055&lang=zh_CN#rd">排序类题目（含Go代码解析）</a>
 
 **入门题目：**
 
 - 排序链表（No148）
 - 合并区间（No56）
-- [高效排序算法之快排](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484200&idx=1&sn=5ea830216cf99ae87ff82f55978ef7a1&chksm=ecac5721dbdbde37d01b069b1dd61cf417aed5ca4e8caac5ac572ac5d375c43de96f42f70868&scene=21#wechat_redirect)
 
 **进阶题目：**
 
-- [最大数（No179）](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484207&idx=1&sn=77098e438cb574d8707fe44f9eb51298&chksm=ecac5726dbdbde30c17a8ae8abe7450dd7bdccd4d732c395c48bb923aaf7538bc93ddee525e5&scene=21#wechat_redirect)
 - 数组中第K个最大元素（No215）
 - 寻找两个正序数组的中位数（No4）
+
+**附加：**
+
+* [高效排序算法之快排](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484200&idx=1&sn=5ea830216cf99ae87ff82f55978ef7a1&chksm=ecac5721dbdbde37d01b069b1dd61cf417aed5ca4e8caac5ac572ac5d375c43de96f42f70868&scene=21#wechat_redirect)
+* [最大数（No179）](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484207&idx=1&sn=77098e438cb574d8707fe44f9eb51298&chksm=ecac5726dbdbde30c17a8ae8abe7450dd7bdccd4d732c395c48bb923aaf7538bc93ddee525e5&scene=21#wechat_redirect)
 
 
 
@@ -274,13 +280,13 @@ GitHub地址：https://github.com/yangfx15/coder
 
 ### 1.2 海量数据问题
 
-* 经典海量数据问题
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484469&idx=1&sn=ef1f8e05dd4656a3f0379d953050fe71&chksm=ecac503cdbdbd92abd193c55778e7aa6216d7c66666a12ed2b457000a520b45ceed45297a919&token=55044055&lang=zh_CN#rd">经典海量数据问题</a>
 
 
 
 ### 1.3 智力测试题
 
-* 整理一些不考智力的智力题
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484385&idx=1&sn=f2b84bb6906bfc11b3f3a496019430b0&chksm=ecac57e8dbdbdefe637eb44a28ddf54760e6ee70577a85ea3cc5211f95fadf24e16a9af2707e&token=55044055&lang=zh_CN#rd">整理一些不考智力的智力题</a>
 
 
 
@@ -328,7 +334,7 @@ GitHub地址：https://github.com/yangfx15/coder
 
 - [Redis数据结构的底层原理](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484077&idx=1&sn=05b873433b81351db83db4d90a569192&chksm=ecac56a4dbdbdfb2562a08f47e9c2b240008903f6cd8b91df6cde69bdb2814908d771be846cb&scene=21#wechat_redirect)
 - [Redis IO多路复用](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484093&idx=1&sn=e173c294e8362e43fb36abf27d20cc30&chksm=ecac56b4dbdbdfa271cedbf3cd9e7c87ad7c7318d493f560b4fd814f277a3d50415ee8fd56f4&scene=21#wechat_redirect)
-- Redis持久化都说不明白？那今天先到这吧~
+- <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484373&idx=1&sn=ca61fbfae1958908688d8d404ef9acaf&chksm=ecac57dcdbdbdeca1b0458e2bf91aae680b85867a5ef4c359fea22d96519675a61338e99c093&token=55044055&lang=zh_CN#rd">Redis持久化都说不明白？那今天先到这吧~</a>
 
 
 
@@ -406,8 +412,8 @@ GitHub地址：https://github.com/yangfx15/coder
 - [GO 垃圾回收](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484217&idx=1&sn=d464e95dcec6252b5e00a5f634a46892&chksm=ecac5730dbdbde26005ba864ab324a3a2c9b90f42c5ce037eb4f5eee36a4e55a4385421d9dd3&scene=21#wechat_redirect)
 - [并发才是时代的主题，goroutine 帮你快速实现](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247483844&idx=1&sn=09b1841623eaedd17babb6b408eb72d7&chksm=ecac55cddbdbdcdb818cf493920199d1a0ccd7fa25bfd010a55a078abc0772022a4af4eb29d0&scene=21#wechat_redirect)
 - [GPM 调度模型](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484182&idx=1&sn=6d3f54eea5622a2d7f6323cbb553fdd8&chksm=ecac571fdbdbde09cc8beb982e5df0caafdf5c87587cd3fbd69ca86c33724e9368ab957beac3&scene=21#wechat_redirect)
-- map都不知道，怎么写代码？
-- 一文带你认识内存管理
+- <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484344&idx=1&sn=66545b924dffa4ccb6d0cd334f56ef93&chksm=ecac57b1dbdbdea76ea384e2cf36bca800ce8961a4a9002d9d98f2e2ea722355905a43f98f82&token=55044055&lang=zh_CN#rd">map都不知道，怎么写代码？</a>
+- <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484428&idx=1&sn=732ab17abcb07262d48b5bec64bdb8d6&chksm=ecac5005dbdbd9132424f59f0cf6188ce5412c75083fc781b2bc3c68592759c1a1b0542635cf&token=55044055&lang=zh_CN#rd">一文带你认识内存管理</a>
 
 
 
@@ -416,11 +422,17 @@ GitHub地址：https://github.com/yangfx15/coder
 - [Go-swagger 应用](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247483965&idx=1&sn=5d07d2df5a19db748e4646803e60cdd1&chksm=ecac5634dbdbdf22dcc63709cf627e03aa49ee21a8c990fe111fe5f4080e2d9553f2a2f09e41&scene=21#wechat_redirect)
 - [Swagger 自动生成 API 文档（开发者实用工具）](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484288&idx=1&sn=974a56eaa286c7c83c25b9c077e8388b&chksm=ecac5789dbdbde9fbf82682500f3c753d0538ed69e1d7bdc9d87a31eed8dca3f91334e2a56ab&scene=21#wechat_redirect)
 
-* gRPC响应ChatGPT流式问答
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484452&idx=1&sn=14f0267e9bf15ae94fc53cb90eda7c3c&chksm=ecac502ddbdbd93b37ab5cf11cd38660c760a844e4455990a53500cd4986befd031a4a68f093&token=55044055&lang=zh_CN#rd">gRPC响应ChatGPT流式问答</a>
 
 
 
-### 8.2 Java
+### 8.2 Python
+
+#### 1）入门
+
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484497&idx=1&sn=4ef211b62caa60d97dd1fd26c2898f8d&chksm=ecac5058dbdbd94e68dce8034f01765370ba8fbc30436b998b12e786bde294923612532e8ac4&token=55044055&lang=zh_CN#rd">Python入门篇（上）</a>
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484501&idx=1&sn=f913e2a8811f35f3d694cfe492327845&chksm=ecac505cdbdbd94a6f04d347be615f9ebe2c14ce934da15c22a3bb38906da38474e147a71422&token=55044055&lang=zh_CN#rd">Python入门篇（中）</a>
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484539&idx=1&sn=7b66b06d4011597f448248fe41c41b72&chksm=ecac5072dbdbd96407419718b0408653a9fa54825741cbdf60257e7d815d57c40a3975c52b5a&token=55044055&lang=zh_CN#rd">Python入门篇（下）</a>
 
 
 
@@ -481,20 +493,21 @@ GitHub地址：https://github.com/yangfx15/coder
 
 ### 15.1 README
 
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484522&idx=1&sn=d716a78a0526dd69291832be705d20b6&chksm=ecac5063dbdbd9759252e8b31fec30d9b7ebf4d7b2c1049de34882d62925a2d20c27e2de9690&token=55044055&lang=zh_CN#rd">26岁程序员体检，脑袋中有一个鸽子蛋般的肿瘤...</a>
 
 
-### 15.2 码间新闻
+
+### 15.2 码间逸事
 
 - [七年荣耀，一如既往？](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247483881&idx=1&sn=f6f682a35910f8e753ec49b5ae9e38c7&chksm=ecac55e0dbdbdcf6b3b90f45aa1123eced26c1a6a45724e2b73b03dd639dd4ce2a6579c05d15&scene=21#wechat_redirect)
 - [要脸，还是要方便？](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247483917&idx=1&sn=5703164683f0a3dda4f7d560e83bc1f2&chksm=ecac5604dbdbdf128d8d288c0673ae0d5fd8d7c6974fdedc37b2d5001debafa0dae29a2337db&scene=21#wechat_redirect)
 - [PDD 事件看内卷](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247483986&idx=1&sn=9c28064604aa497271c6fa4eff70e9a6&chksm=ecac565bdbdbdf4da52b6c3027ce2d5f7bdfc1a1812a4d1c6bd3eb823fa86a2e902072241d5d&scene=21#wechat_redirect)
 
-* OpenAI 发布 GPT-4，有哪些技术上的优化或突破？
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484410&idx=1&sn=e96622284a64204e2bf2d79bdadb4370&chksm=ecac57f3dbdbdee5fff3575a44c801f5841ba700b2ff1c04b0e55a4762405a6ad49984a4a3a0&token=55044055&lang=zh_CN#rd">OpenAI 发布 GPT-4，有哪些技术上的优化或突破？</a>
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484476&idx=1&sn=d566a34e0764bff9580079261e5903dd&chksm=ecac5035dbdbd923ba373c595b9b01c0fb387386b3300104c8f5ab32fdc659b0291369ef07d3&token=55044055&lang=zh_CN#rd">从数据标注看机器学习</a>
 
 
 
 ### 15.3 面经
 
-富途
-
-* 一面：大厂面试都会问什么
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484461&idx=1&sn=a278bc04ae023fba780ef792fead2362&chksm=ecac5024dbdbd9325eb5535fecf717085625e17f8245d0bcd4aec7d2d942cd813ec6fdeb3ae3&token=55044055&lang=zh_CN#rd">大厂面试都会问什么</a>
