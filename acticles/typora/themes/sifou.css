@@ -1,0 +1,484 @@
+/*根ROOT：:root 选择器匹配文档根元素（在 HTML 中，根元素始终是<html>元素）。貌似只能在Typora编辑器中使用 */
+
+:root {
+    --side-bar-bg-color: #fafafa;       /*侧边栏背景颜色 fafafa*/
+    --control-text-color: #777;         /*侧边栏的控件（文件和大纲）颜色 777 */
+}
+
+/*---------------------------------------------------------------------------------------------------------**/
+
+
+@include-when-export url(https://fonts.loli.net/css?family=Open+Sans:400italic,700italic,700,400&subset=latin,latin-ext);
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: normal;
+    src: local('Open Sans Regular'),url('./github/400.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: normal;
+    src: local('Open Sans Italic'),url('./github/400i.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: normal;
+    font-weight: bold;
+    src: local('Open Sans Bold'),url('./github/700.woff') format('woff');
+}
+
+@font-face {
+    font-family: 'Open Sans';
+    font-style: italic;
+    font-weight: bold;
+    src: local('Open Sans Bold Italic'),url('./github/700i.woff') format('woff');
+}
+
+html {
+    font-size: 16px;
+}
+
+body {
+    font-family: "Open Sans","Clear Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    color: rgb(51, 51, 51);
+    line-height: 1.6;
+}
+
+#write {
+    max-width: 860px;
+  	margin: 0 auto;
+  	padding: 30px;
+    padding-bottom: 100px;
+}
+#write > ul:first-child,
+#write > ol:first-child{
+    margin-top: 30px;
+}
+
+/* 超连接LINKS：<a>元素表示超链接*/
+a {
+    color: #4183C4;
+	/* text-decoration: none;              文本修饰：none表示不修饰 */
+	/* font-style: italic;                 字体类型：斜体 */
+}
+
+/*
+a:focus {                               :focus选择器表示获得焦点的指定元素 
+    outline: thin dotted;               轮廓线：3个参数（可缺省）：颜色（缺省）、样式（dotted）、宽度（thin）
+}
+a:active,                               :active选择器表示选择活动的指定元素
+a:hover {                               :hover选择器表示鼠标指针悬浮在指定元素上时
+    outline: 0;
+    color: #cb4b16;                     鼠标悬停时，链接的颜色
+    text-decoration: underline;         文本修饰：underline表示文本下定义一条下划线
+}
+a:visited {                           :visited选择器表示选择已访问的指定元素
+  color: #cb4b16;
+}
+
+*/
+
+
+
+/*设置标题，默认是6个标题，如果说我们需要添加多一点多一些标题，完全可以在这个地方添加**/
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    position: relative;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+    line-height: 1.4;
+    cursor: text;
+}
+h1:hover a.anchor,
+h2:hover a.anchor,
+h3:hover a.anchor,
+h4:hover a.anchor,
+h5:hover a.anchor,
+h6:hover a.anchor {
+    text-decoration: none;
+}
+h1 tt,
+h1 code {
+    font-size: inherit;
+}
+h2 tt,
+h2 code {
+    font-size: inherit;
+}
+h3 tt,
+h3 code {
+    font-size: inherit;
+}
+h4 tt,
+h4 code {
+    font-size: inherit;
+}
+h5 tt,
+h5 code {
+    font-size: inherit;
+}
+h6 tt,
+h6 code {
+    font-size: inherit;
+}
+h1 {
+    padding-bottom: .3.2em;                /* 设置上边距 */
+    font-size: 2.4em;					   /* 字体大小 */
+    line-height: 1.2;                      /* 行高 */
+    border-bottom: 3px solid #eee;         /*标题底部设置一条横线**/
+	/*text-align: center;                  如果说我们需要将标题居中的话，那么我们可以这样设置(文本对齐：居中)*/
+}
+h2 {
+    padding-bottom: .2.8em;
+    font-size: 2em;
+    line-height: 1.2;
+    border-bottom: 1.7px solid #eee;
+}
+h3 {
+	padding-bottom: .2.8em;
+    font-size: 1.8em;
+    line-height: 1.2;
+	border-bottom: 1.4px solid #eee;
+}
+h4 {
+	padding-bottom: .2.8em;         /*设置标题下边距 */
+    font-size: 1.6em;             /*设置标题的大小 */
+	line-height: 1.2;             /*设置行高 */
+	border-bottom: 1.1px solid #eee;/*标题底部设置一条横线**/
+}
+h5 {
+	padding-bottom: .2.8em;
+    font-size: 1.4em;
+	line-height: 1.2;
+	border-bottom: 1px solid #eee;
+}
+h6 {
+	padding-bottom: .2.8em;
+    font-size: 1.2em;
+    line-height: 1.2;
+    border-bottom: 1px solid #eee;
+    /**color: #777;                       如果说我们需要对标题设置颜色的话，可以直接设置颜色即可**/
+}
+p,
+blockquote,
+ul,
+ol,
+dl,
+table{
+    margin: 0.8em 0;
+}
+li>ol,
+li>ul {
+    margin: 0 0;
+}
+hr {
+    height: 2px;
+    padding: 0;
+    margin: 16px 0;
+    background-color: #e7e7e7;
+    border: 0 none;
+    overflow: hidden;
+    box-sizing: content-box;
+}
+
+li p.first {
+    display: inline-block;
+}
+ul,
+ol {
+    padding-left: 30px;
+}
+ul:first-child,
+ol:first-child {
+    margin-top: 0;
+}
+ul:last-child,
+ol:last-child {
+    margin-bottom: 0;
+}
+
+/* 设置加粗后的样式 */
+
+/* 强调：<strong> 标签和 <em> 标签一样，用于强调文本，但它强调的程度更强一些。
+用斜体来显示 <dfn> 中的文本。<del>定义文档中已被删除的文本。*/
+
+strong
+.md-plain{
+	font-size:1.1em;
+	color: #00965e;
+}
+
+/* 设置高亮后的样式 */
+mark {
+	font-size:1.1em;
+	color: #00965E;
+    background: #E9ECEF;
+}
+
+/* 备注代码块的样式 */
+/*引用QUOTES：<blockquote> 标签定义块引用*/
+blockquote {
+    border-left: 4px solid #00965E;
+	background: #e7e7e7;  /*设置备注代码块的背景颜色e7e7e7*/
+    padding: 8px;         /*设置备注代码块的高宽*/
+    color: #6f6f6f;       /*设置备注代码块内的文字颜色6f6f6f*/
+}
+blockquote blockquote {
+    padding-right: 0;
+}
+table {
+    padding: 0;
+    word-break: initial;
+}
+
+/* TABLES：<table> 标签定义 HTML 表格。简单的 HTML 表格由table元素以及一个或多个tr、th或td元素组成。
+tr元素定义表格行，th元素定义表头，td元素定义表格单元。
+=============================================================================*/
+
+table tr {
+    border-top: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 0;
+	/* background-color: #fff;  表格的行的背景色 */
+}
+table tr:nth-child(2n),
+
+/*
+table tr:nth-child(2n) {
+  background-color: #f8f8f8;             表格的偶数行的背景色 
+}
+*/
+
+thead {
+    background-color: #f8f8f8;
+}
+table tr th {
+    font-weight: bold;
+    border: 1px solid #dfe2e5;
+    border-bottom: 0;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr td {
+    border: 1px solid #dfe2e5;
+    margin: 0;
+    padding: 6px 13px;
+}
+table tr th:first-child,
+table tr td:first-child {
+    margin-top: 0;
+}
+table tr th:last-child,
+table tr td:last-child {
+    margin-bottom: 0;
+}
+
+.CodeMirror-lines {
+    padding-left: 4px;
+}
+
+.code-tooltip {
+    box-shadow: 0 1px 1px 0 rgba(0,28,36,.3);
+    border-top: 1px solid #eef2f2;
+}
+/*设置代码块的样式*/
+
+/* 源代码CODE：
+<pre>标签表示在其中的内容保留空格和换行，即保留原来就有的格式信息。
+<code>标签表示在其中的内容是源代码，包含代码或代码块。
+在Typora编辑器中，必须使用<.md-fences>标签表示代码块（底色占据正文宽度）
+<tt>标签表示代码（底色占据代码宽度）
+<kbd>标签定义键盘文本，表示文本是从键盘上键入的。
+<code>只是说明这是源代码，<pre>用来保留原格式。这两个HTML元素组合在一起，完美实现在HTML网页中显示源代码的功能。
+*/
+/*===========================================================================================================*/
+/* <code>元素表示源代码，包含代码或代码块。
+在Typora编辑器中，必须使用<.md-fences>标签表示代码块。在其它编辑器中，代码块依然使用<code> */
+.md-fences,
+code,
+
+tt {
+    background-color: #ccf5e7;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 0.9em;
+	/*color:#00965E;*/
+}
+
+code {
+    background-color: #e5f4ef;
+    padding: 4px;
+	
+}
+
+.md-fences {
+    margin-bottom: 15px;
+    margin-top: 15px;
+    padding-top: 8px;
+    padding-bottom: 6px;
+}
+
+/*
+.md-fences, pre .md-fences {
+	color: #000000;
+	max-height: 380px;        设置元素的最大高度：配合overflow属性一起使用，若超出高度，则自动生成滚动条
+	overflow: auto;           当内容溢出元素框时的处理：auto表示若内容溢出，则浏览器会显示滚动条以便查看其余的内容
+}
+*/
+
+.md-task-list-item > input {
+  margin-left: -1.3em;
+}
+
+@media print {
+    html {
+        font-size: 13px;
+    }
+    table,
+    pre {
+        page-break-inside: avoid;
+    }
+    pre {
+        word-wrap: break-word;
+    }
+}
+
+.md-fences,
+code,
+
+tt {
+    background-color: #ccf5e7;
+    border-radius: 4px;
+    padding: 4px;
+    font-size: 1em;
+	color:#00965E;
+}
+
+code {
+    background-color: #e5f4ef;
+    padding: 4px;
+	
+}
+
+#write pre.md-meta-block {
+	padding: 1rem;
+    font-size: 85%;
+    line-height: 1.45;
+    background-color: #f7f7f7;
+    border: 0;
+    border-radius: 3px;
+    color: #777777;
+    margin-top: 0 !important;
+}
+
+.mathjax-block>.code-tooltip {
+	bottom: .375rem;
+}
+
+.md-mathjax-midline {
+    background: #fafafa;
+}
+
+#write>h3.md-focus:before{
+	left: -1.5625rem;
+	top: .375rem;
+}
+#write>h4.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h5.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+#write>h6.md-focus:before{
+	left: -1.5625rem;
+	top: .285714286rem;
+}
+.md-image>.md-meta {
+    /*border: 1px solid #ddd;*/
+    border-radius: 3px;
+    padding: 2px 0px 0px 4px;
+    font-size: 0.9em;
+    color: inherit;
+}
+
+.md-tag {
+    color: #a7a7a7;
+    opacity: 1;
+}
+
+.md-toc { 
+    margin-top:20px;
+    padding-bottom:20px;
+}
+
+.sidebar-tabs {
+    border-bottom: none;
+}
+
+#typora-quick-open {
+    border: 1px solid #ddd;
+    background-color: #f8f8f8;
+}
+
+#typora-quick-open-item {
+    background-color: #FAFAFA;
+    border-color: #FEFEFE #e5e5e5 #e5e5e5 #eee;
+    border-style: solid;
+    border-width: 1px;
+}
+
+/** focus mode */
+.on-focus-mode blockquote {
+    border-left-color: rgba(85, 85, 85, 0.12);
+}
+
+header, .context-menu, .megamenu-content, footer{
+    font-family: "Segoe UI", "Arial", sans-serif;
+}
+
+.file-node-content:hover .file-node-icon,
+.file-node-content:hover .file-node-open-state{
+    visibility: visible;
+}
+
+.mac-seamless-mode #typora-sidebar {
+    background-color: #fafafa;
+    background-color: var(--side-bar-bg-color);
+}
+
+.md-lang {
+    color: #b4654d;
+}
+
+.html-for-mac .context-menu {
+    --item-hover-bg-color: #E6F0FE;
+}
+
+#md-notification .btn {
+    border: 0;
+}
+
+.dropdown-menu .divider {
+    border-color: #e5e5e5;
+}
+
+.ty-preferences .window-content {
+    background-color: #fafafa;
+}
+
+.ty-preferences .nav-group-item.active {
+    color: white;
+    background: #999;
+}
