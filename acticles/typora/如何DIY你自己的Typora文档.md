@@ -12,7 +12,7 @@
 
 你是否在对齐，颜色，文本样式上花了大量的时间去折腾 Office 三件套。而且做出来的简历还平平无奇，难以被认可。
 
-接下来我介绍的这款 Markdown 工具，或者可以有效解决这些难题。
+接下来我介绍的这款 Markdown 工具，或者可以有效解决这些问题。
 
 无论你是学生，抑或是工作三五年的互联网打工人，还是像教师、公务员这样经常需要写文档和报告的群体。**只要你写过了 Markdown 样式的文档，就一定会爱不释手**。
 
@@ -217,21 +217,8 @@ $$+回车，输入math语法，如：
 ```
 
 效果如下：
-$$
-\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} 
-\mathbf{i} & \mathbf{j} & \mathbf{k} \\
-\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\
-\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \\
-\end{vmatrix}
-$$
 
-$$
-\mathbf{V}_1 \times \mathbf{V}_2 =  \begin{vmatrix} 
-\mathbf{i} & \mathbf{j} & \mathbf{k} \\
-\frac{\partial X}{\partial u} &  \frac{\partial Y}{\partial u} & 0 \\
-\frac{\partial X}{\partial v} &  \frac{\partial Y}{\partial v} & 0 \\
-\end{vmatrix}
-$$
+![image-20230819161153109](imgs/image-20230819161153109.png)
 
 
 
@@ -510,11 +497,11 @@ Typora 为我们提供了多种文档主题可供选择，具体可在文档页�
 
 这两种主题，我都已经放到我的 GitHub 和百度网盘里了，需要的可以自取。
 
-> GitHub地址：
+> GitHub地址：https://github.com/yangfx15/coder/tree/main/acticles/typora/themes
 >
 > 网盘地址：链接：https://pan.baidu.com/s/1n7Szy7OrnXlPzsMTrCiypA，提取码：qsac
 
-后续找到更精美或者 DIY 出不同的风格主题时，会直接评论在同名 WXGZH 文章下面，有需要的可以关注一波。
+后续找到更精美或者 DIY 出不同的风格主题时，会直接评论在同名 WeChat GZH 文章下面，有需要的可以关注一波。
 
 
 
