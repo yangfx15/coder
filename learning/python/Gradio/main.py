@@ -1,13 +1,14 @@
 import gradio as gr
 import cv2
+import numpy as np
 
 from PIL import Image, ImageOps, ImageFilter
 
 # 转换成漫画风格
 def toCarttonStyle(img_rgb):
     # 属性设置
-    num_down = 2  # 缩减像素采样的数目
-    num_bilateral = 7  # 定义双边滤波的数目
+    num_down = 4  # 缩减像素采样的数目
+    num_bilateral = 15  # 定义双边滤波的数目
 
     # 用高斯金字塔降低取样
     img_color = img_rgb
@@ -33,7 +34,7 @@ def toCarttonStyle(img_rgb):
                                      blockSize=9,
                                      C=2)
 	
-	 # 算法处理后，照片的尺寸可能会不统一
+	# 算法处理后，照片的尺寸可能会不统一
     # 把照片的尺寸统一化
     height=img_rgb.shape[0]
     width = img_rgb.shape[1]
@@ -45,7 +46,7 @@ def toCarttonStyle(img_rgb):
     
     return img_cartoon
 
-# 透明度转换  素描转换的一部分
+# 透明度转换，素描转换的一部分
 def dodge(a, b, alpha):
     # alpha为图片透明度
     return min(int(a * 255 / (256 - b * alpha)), 255)
@@ -66,6 +67,7 @@ def toSketchStyle(img):
     # 模糊度
     for i in range(blur):
         img2 = img2.filter(ImageFilter.BLUR)
+
     width, height = img1.size
     for x in range(width):
         for y in range(height):
@@ -79,5 +81,17 @@ def to_black(image):
     output = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     return output
 
-interface = gr.Interface(fn=toCarttonStyle, inputs="image", outputs="image")
+def carton(img):
+    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
+    edges = cv2.Canny(gray, 100, 200)
+
+    # 对边缘进行处理以生成漫画效果
+    edges = cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR)
+    edges[np.where((edges != [0, 0, 0]).all(axis=2))] = [0, 0, 255]
+    color = cv2.bilateralFilter(img, 9, 300, 300)
+    cartoon = cv2.bitwise_and(color, edges)
+    
+    return cartoon
+
+interface = gr.Interface(fn=carton, inputs="image", outputs="image")
 interface.launch()
