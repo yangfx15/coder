@@ -1,7 +1,15 @@
 import gradio as gr
 import cv2
 import numpy as np
+import os
+import argparse
+from PIL import Image
+import numpy as np
 
+import torch
+from torchvision.transforms.functional import to_tensor, to_pil_image
+
+from model import Generator
 from PIL import Image, ImageOps, ImageFilter
 
 # 转换成漫画风格
@@ -81,15 +89,44 @@ def to_black(image):
     output = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     return output
 
-def carton(img):
-    gray = cv2.cvtColor(img, cv2.COLOR_BGR2GRAY)
-    edges = cv2.Canny(gray, 100, 200)
+def load_image(image_path, x32=False):
+    img = Image.open(image_path).convert("RGB")
 
-    # 对边缘进行处理以生成漫画效果
-    edges = cv2.cvtColor(edges, cv2.COLOR_GRAY2BGR)
-    edges[np.where((edges != [0, 0, 0]).all(axis=2))] = [0, 0, 255]
-    color = cv2.bilateralFilter(img, 9, 300, 300)
-    cartoon = cv2.bitwise_and(color, edges)
+    if x32:
+        def to_32s(x):
+            return 256 if x < 256 else x - x % 32
+        w, h = img.size
+        img = img.resize((to_32s(w), to_32s(h)))
+
+    return img
+
+def carton(image):
+    device = "cpu"
+    
+    net = Generator()
+    net.load_state_dict(torch.load(args.checkpoint, map_location="cpu"))
+    net.to(device).eval()
+    print(f"model loaded: {args.checkpoint}")
+    
+    os.makedirs(args.output_dir, exist_ok=True)
+
+    if os.path.splitext(image_name)[-1].lower() not in [".jpg", ".png", ".bmp", ".tiff"]:
+        continue
+        
+    image = load_image(os.path.join(args.input_dir, image_name), args.x32)
+
+    with torch.no_grad():
+        image = to_tensor(image).unsqueeze(0) * 2 - 1
+        out = net(image.to(device), args.upsample_align).cpu()
+        out = out.squeeze(0).clip(-1, 1) * 0.5 + 0.5
+        out = to_pil_image(out)
+
+    strs = str.split(args.checkpoint, "/")
+
+    image_name = strs[-1] + "_" + image_name
+    out.save(os.path.join(args.output_dir, image_name))
+    
+    image = load_image(os.path.join(args.input_dir, image_name), args.x32)
     
     return cartoon
 
