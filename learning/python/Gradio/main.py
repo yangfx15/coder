@@ -9,7 +9,6 @@ import numpy as np
 import torch
 from torchvision.transforms.functional import to_tensor, to_pil_image
 
-from model import Generator
 from PIL import Image, ImageOps, ImageFilter
 
 # 转换成漫画风格
@@ -61,7 +60,7 @@ def dodge(a, b, alpha):
 
 
 # 图片转换为素描
-def toSketchStyle(img):
+def toSketchStyle(img: Image = None):
     blur = 25
     alpha = 1.0
 
@@ -85,50 +84,5 @@ def toSketchStyle(img):
 
     return img1
 
-def to_black(image):
-    output = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
-    return output
-
-def load_image(image_path, x32=False):
-    img = Image.open(image_path).convert("RGB")
-
-    if x32:
-        def to_32s(x):
-            return 256 if x < 256 else x - x % 32
-        w, h = img.size
-        img = img.resize((to_32s(w), to_32s(h)))
-
-    return img
-
-def carton(image):
-    device = "cpu"
-    
-    net = Generator()
-    net.load_state_dict(torch.load(args.checkpoint, map_location="cpu"))
-    net.to(device).eval()
-    print(f"model loaded: {args.checkpoint}")
-    
-    os.makedirs(args.output_dir, exist_ok=True)
-
-    if os.path.splitext(image_name)[-1].lower() not in [".jpg", ".png", ".bmp", ".tiff"]:
-        continue
-        
-    image = load_image(os.path.join(args.input_dir, image_name), args.x32)
-
-    with torch.no_grad():
-        image = to_tensor(image).unsqueeze(0) * 2 - 1
-        out = net(image.to(device), args.upsample_align).cpu()
-        out = out.squeeze(0).clip(-1, 1) * 0.5 + 0.5
-        out = to_pil_image(out)
-
-    strs = str.split(args.checkpoint, "/")
-
-    image_name = strs[-1] + "_" + image_name
-    out.save(os.path.join(args.output_dir, image_name))
-    
-    image = load_image(os.path.join(args.input_dir, image_name), args.x32)
-    
-    return cartoon
-
-interface = gr.Interface(fn=carton, inputs="image", outputs="image")
+interface = gr.Interface(fn=toSketchStyle, inputs="image", outputs="image")
 interface.launch()
