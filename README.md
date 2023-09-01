@@ -1,6 +1,6 @@
 # coder
 
-Learning route of a backstage development programmer/gopher
+==Learning route of a backstage development programmer/gopher==
 
 
 
@@ -12,7 +12,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 
 
-学习路线图：
+### 学习路线图：
 
 ![image-20230814171118235](img/image-20230814171118235.png)
 
@@ -87,23 +87,23 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 
 
-## 1. 算法与数据结构
+# 1. 算法与数据结构
 
-### 1.1 高频算法题 Top 系列
+## 1.1 高频算法题 Top 系列
 
-#### 1）<a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484365&idx=1&sn=d0a1195fa364ec9780132900fd21c90d&chksm=ecac57c4dbdbded26bbcb03a222f74cf60f99a668d6deaae11731bd075fed799cc3f5d65296d&token=55044055&lang=zh_CN#rd">排序类题目（含Go代码解析）</a>
+### 1）<a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484365&idx=1&sn=d0a1195fa364ec9780132900fd21c90d&chksm=ecac57c4dbdbded26bbcb03a222f74cf60f99a668d6deaae11731bd075fed799cc3f5d65296d&token=55044055&lang=zh_CN#rd">排序类题目（包括入门和进阶题目，含代码解析）</a>
 
-**入门题目：**
+#### 入门题目
 
 - 排序链表（No148）
 - 合并区间（No56）
 
-**进阶题目：**
+#### 进阶题目
 
 - 数组中第K个最大元素（No215）
 - 寻找两个正序数组的中位数（No4）
 
-**附加：**
+#### 附加
 
 * [高效排序算法之快排](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484200&idx=1&sn=5ea830216cf99ae87ff82f55978ef7a1&chksm=ecac5721dbdbde37d01b069b1dd61cf417aed5ca4e8caac5ac572ac5d375c43de96f42f70868&scene=21#wechat_redirect)
 * [最大数（No179）](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484207&idx=1&sn=77098e438cb574d8707fe44f9eb51298&chksm=ecac5726dbdbde30c17a8ae8abe7450dd7bdccd4d732c395c48bb923aaf7538bc93ddee525e5&scene=21#wechat_redirect)
@@ -324,7 +324,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 ## 4. 数据库
 
-#### 4.1 MySQL
+### 4.1 MySQL
 
 - [MySQL硬核知识点总结](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484042&idx=1&sn=1620b3df43419745708f6f4c60a9ad9a&chksm=ecac5683dbdbdf95197214ec82fe119ce0bc64c95b6806a8124a381f2c01131d41d6678b87e6&scene=21#wechat_redirect)
 
