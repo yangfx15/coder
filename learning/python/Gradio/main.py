@@ -7,7 +7,6 @@ from PIL import Image
 import numpy as np
 
 import torch
-from torchvision.transforms.functional import to_tensor, to_pil_image
 
 from PIL import Image, ImageOps, ImageFilter
 
@@ -84,5 +83,5 @@ def toSketchStyle(img: Image = None):
 
     return img1
 
-interface = gr.Interface(fn=toSketchStyle, inputs="image", outputs="image")
+interface = gr.Interface(fn=toCarttonStyle, inputs="image", outputs="image")
 interface.launch()

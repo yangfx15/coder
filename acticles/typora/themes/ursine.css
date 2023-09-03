@@ -82,7 +82,7 @@ body>*:last-child {
 
 
 /* a {
-    color: var(--main-6);
+    color: #f22f27;
     font-weight: 500;
     padding: 0 2px;
     text-decoration: none;
@@ -100,8 +100,8 @@ a {
 
 
 /* #write a {
-    border-bottom: 1px solid var(--main-6);
-    color: var(--main-6);
+    border-bottom: 1px solid #f22f27;
+    color: #f22f27;
     text-decoration: none;
 } */
 
@@ -121,7 +121,7 @@ a {
 }
 
 #write a:hover {
-    border-bottom: 2px solid var(--main-6);
+    border-bottom: 2px solid #f22f27;
     color: var(--main-7);
 }
 
@@ -189,17 +189,19 @@ h1 {
     font-size: 2.2em;
     line-height: 1.2;
     margin: 2.4em auto 1.2em;
-    color: var(--main-10);
+    color: #590009;
 }
 
+/*
 h1:after {
     content: '';
     display: block;
     margin: 0.2em auto 0;
     width: 100px;
     height: 2px;
-    border-bottom: 2px solid var(--main-6);
+    border-bottom: 2px solid #f22f27;
 }
+*/
 
 h2 {
     margin: 2em auto 1.4em;
@@ -207,9 +209,9 @@ h2 {
     /* display:inline-block; */
     line-height: 1.4;
     font-size: 1.8em;
-    /* border-left: 9px solid var(--main-6); */
+    /* border-left: 9px solid #f22f27; */
     /* border-bottom: 1px solid #ddd; */
-    border-bottom: 1px solid var(--main-6);
+    border-bottom: 1px solid #f22f27;
 }
 
 h2::before {
@@ -242,8 +244,8 @@ h4 {
     padding-left: 6px;
     padding-right: 6px;
     display: inline-block;
-    border: 1px solid var(--main-6);
-    border-top: 4px solid var(--main-6);
+    border: 1px solid #f22f27;
+    border-top: 4px solid #f22f27;
 }
 
 #write h5::before,
@@ -386,7 +388,7 @@ table {
 }
 
 table tr {
-    border-top: 1px solid var(--main-6);
+    border-top: 1px solid #f22f27;
     margin: 0;
     padding: 0;
 }
@@ -398,7 +400,7 @@ thead {
 
 table tr th {
     font-weight: bold;
-    border: 1px solid var(--main-6);
+    border: 1px solid #f22f27;
     border-bottom: 0;
     text-align: left;
     margin: 0;
@@ -406,7 +408,7 @@ table tr th {
 }
 
 table tr td {
-    border: 1px solid var(--main-6);
+    border: 1px solid #f22f27;
     text-align: left;
     margin: 0;
     padding: 6px 13px;
@@ -584,8 +586,8 @@ tt {
     content: '\2714';
     font-size: 0.625rem;
     color: var(--mid-1);
-    border: 1px solid var(--main-6);
-    background-color: var(--main-6);
+    border: 1px solid #f22f27;
+    background-color: #f22f27;
 }
 
 
@@ -737,12 +739,12 @@ footer {
 .file-list-item.active {
     background: var(--active-file-bg-color);
     color: var(--active-file-text-color);
-    border-left: 4px solid var(--main-6);
+    border-left: 4px solid #f22f27;
 }
 
 .file-tree-node.active>.file-node-background {
     background-color: var(--active-file-bg-color);
-    border-left: 4px solid var(--main-6);
+    border-left: 4px solid #f22f27;
     border-color: var(--active-file-border-color);
 }
 
