@@ -1,6 +1,4 @@
 @import 'md/fonts.css';
-
-/* 颜色代码：https://zhouxiaoben.info/post-6586.html */
 :root {
     --side-bar-bg-color: #fff;
     --control-text-color: #777;
@@ -29,7 +27,7 @@
     --main-3: #ffafa3;
     --main-4: #ff887a;
     --main-5: #ff5d52;
-    --main-6: #ff7f00;
+    --main-6: #f22f27;
     --main-7: #cc1616;
     --main-8: #a60a0f;
     --main-9: #80010a;
@@ -84,7 +82,7 @@ body>*:last-child {
 
 
 /* a {
-    color: #FF7F00;
+    color: var(--main-6);
     font-weight: 500;
     padding: 0 2px;
     text-decoration: none;
@@ -102,8 +100,8 @@ a {
 
 
 /* #write a {
-    border-bottom: 1px solid #FF7F00;
-    color: #FF7F00;
+    border-bottom: 1px solid var(--main-6);
+    color: var(--main-6);
     text-decoration: none;
 } */
 
@@ -123,7 +121,7 @@ a {
 }
 
 #write a:hover {
-    border-bottom: 2px solid #FF7F00;
+    border-bottom: 2px solid var(--main-6);
     color: var(--main-7);
 }
 
@@ -187,65 +185,42 @@ h3 a {
 
 h1 {
     text-align: center;
-    padding-bottom: .3.2em;
-    font-size: 1.7em;
+    padding-bottom: 0.3em;
+    font-size: 2.2em;
     line-height: 1.2;
-    margin:0 auto;
-    color: #590009;
-	//border-bottom: 3px solid #FF7F00; 
-	
-	/*
-	margin-top: 1.1em;
-    padding-left: 10px;
-    padding-right: 10px;
-    display: inline-block;
-    border: 4px solid #FF7F00;
-    border-top: 2px solid #FF7F00;
-	*/
-
-	:after {
-		content: '';
-		display: block;
-		margin: 0.2em auto 0;
-		width: 200px;
-		height: 2px;
-		border-bottom: 2px solid #ff7f00;
-	}
+    margin: 2.4em auto 1.2em;
+    color: var(--main-10);
 }
 
-/*
 h1:after {
     content: '';
     display: block;
     margin: 0.2em auto 0;
     width: 100px;
     height: 2px;
-    border-bottom: 2px solid #ff7f00;
+    border-bottom: 2px solid var(--main-6);
 }
-*/
 
 h2 {
-    margin: 1em auto 1.4em;
+    margin: 2em auto 1.4em;
     /* padding-left: 10px; */
+    /* display:inline-block; */
     line-height: 1.4;
-    font-size: 1.5em;
-	//display: inline-block;
-    /* border-left: 9px solid #FF7F00; */
+    font-size: 1.8em;
+    /* border-left: 9px solid var(--main-6); */
     /* border-bottom: 1px solid #ddd; */
-    border-bottom: 1px solid #FF7F00;
+    border-bottom: 1px solid var(--main-6);
 }
 
-/*
 h2::before {
     content: '# '!important;
     color: #f22f27;
 }
-*/
 
 h3 {
-    font-size: 1.3em;
+    font-size: 1.4em;
     line-height: 1.43;
-    margin: 1.2em auto 1.2em;
+    margin: 1.6em auto 1.2em;
     padding-left: 9px;
     border-left: 5px solid #f22f27;
 }
@@ -262,13 +237,13 @@ h3 {
 }
 
 h4 {
-    margin-top: 1.1em;
-    font-size: 1.1em;
+    margin-top: 1.3em;
+    font-size: 1.2em;
     padding-left: 6px;
     padding-right: 6px;
     display: inline-block;
-    border: 1px solid #FF7F00;
-    border-top: 4px solid #FF7F00;
+    border: 1px solid var(--main-6);
+    border-top: 4px solid var(--main-6);
 }
 
 #write h5::before,
@@ -295,7 +270,6 @@ h4 {
     font-size: 1rem;
 }
 
-/*
 #write h5::before {
     content: 'H5';
     top: 0.18rem;
@@ -305,7 +279,6 @@ h4 {
     content: 'H6';
     top: 0.18rem;
 }
-*/
 
 p,
 blockquote,
@@ -413,7 +386,7 @@ table {
 }
 
 table tr {
-    border-top: 1px solid #FF7F00;
+    border-top: 1px solid var(--main-6);
     margin: 0;
     padding: 0;
 }
@@ -425,7 +398,7 @@ thead {
 
 table tr th {
     font-weight: bold;
-    border: 1px solid #FF7F00;
+    border: 1px solid var(--main-6);
     border-bottom: 0;
     text-align: left;
     margin: 0;
@@ -433,7 +406,7 @@ table tr th {
 }
 
 table tr td {
-    border: 1px solid #FF7F00;
+    border: 1px solid var(--main-6);
     text-align: left;
     margin: 0;
     padding: 6px 13px;
@@ -561,7 +534,7 @@ tt {
 /* heighlight. */
 
 #write mark {
-    background-color: #faa755;
+    background-color: #EBFFEB;
     border-radius: 2px;
     padding: 2px 4px;
     margin: 0 2px;
@@ -611,8 +584,8 @@ tt {
     content: '\2714';
     font-size: 0.625rem;
     color: var(--mid-1);
-    border: 1px solid #FF7F00;
-    background-color: #FF7F00;
+    border: 1px solid var(--main-6);
+    background-color: var(--main-6);
 }
 
 
@@ -764,12 +737,12 @@ footer {
 .file-list-item.active {
     background: var(--active-file-bg-color);
     color: var(--active-file-text-color);
-    border-left: 4px solid #FF7F00;
+    border-left: 4px solid var(--main-6);
 }
 
 .file-tree-node.active>.file-node-background {
     background-color: var(--active-file-bg-color);
-    border-left: 4px solid #FF7F00;
+    border-left: 4px solid var(--main-6);
     border-color: var(--active-file-border-color);
 }
 
