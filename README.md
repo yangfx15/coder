@@ -1,14 +1,16 @@
 # coder
 
-==Learning route of a backstage development programmer/gopher==
+> Learning route and article of a backstage development programmer/gopher
 
 
 
-GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a>
+GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a> 
 
-> https://github.com/yangfx15/coder
+> 防止上面的链接无法跳转：https://github.com/yangfx15/coder
 
-说明：学习路线中**未打上链接的知识点都还未完善**，⭐️和评论越多 ，更新越快哦~~
+
+
+说明：学习路线中**未打上链接的知识点都还未完善**，⭐️和评论越多 ，更新越快！
 
 
 
@@ -91,7 +93,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 ## 1.1 高频算法题 Top 系列
 
-### 1）<a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484365&idx=1&sn=d0a1195fa364ec9780132900fd21c90d&chksm=ecac57c4dbdbded26bbcb03a222f74cf60f99a668d6deaae11731bd075fed799cc3f5d65296d&token=55044055&lang=zh_CN#rd">排序类题目（包括入门和进阶题目，含代码解析）</a>
+### 1）<a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484365&idx=1&sn=d0a1195fa364ec9780132900fd21c90d&chksm=ecac57c4dbdbded26bbcb03a222f74cf60f99a668d6deaae11731bd075fed799cc3f5d65296d&token=55044055&lang=zh_CN#rd">排序类题目（涵盖入门和进阶题目，含代码解析）</a>
 
 #### 入门题目
 
@@ -110,9 +112,9 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 
 
-#### 2）链表操作类
+### 2）链表操作类
 
-**入门题目：**
+#### 入门题目
 
 - 反转链表（No206）
 - 删除链表的倒数第K个节点（No19）
@@ -120,7 +122,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 - 重排链表（No143）
 - 删除排序链表中的重复元素II（No82）
 
-**进阶题目：**
+#### 进阶题目
 
 - K个一组反转链表（No25）
 - 反转链表II（No92）
@@ -130,16 +132,16 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 
 
-#### 3）数据结构之堆栈、队列、Map类
+### 3）数据结构之堆栈、队列、Map类
 
-**入门题目：**
+#### 入门题目
 
 - 最小栈（No155）
 - 栈实现队列（No232）
 - 循环队列（No622）
 - 数组中第K个最大元素（No215-堆实现）
 
-**进阶题目：**
+#### 进阶题目
 
 - LRU缓存（No146）
 - 最长连续序列（No128）
@@ -148,9 +150,9 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 
 
-#### 4）二分法类
+### 4）二分法类
 
-**入门题目：**
+#### 入门题目
 
 - 排序数组中查找元素的第1个和最后1个位置（No34）
 - 寻找峰值（No162）
@@ -158,38 +160,38 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 - 搜索旋转排序数组（No33）
 - x的平方根（No69）
 
-**进阶题目：**
+#### 进阶题目
 
 - 搜索二维矩阵 II（No240）
 - 按权重随机选择（No528）
 
 
 
-#### 5）双指针类
+### 5）双指针类
 
-**入门题目：**
+#### 入门题目
 
 - 最长回文子串（No5）
 - 无重复字符的最长子串（No3）
 - 最大连续1的个数 III（No1004）
 - 删除链表的倒数第N个节点（No19）
 
-**进阶题目：**
+#### 进阶题目
 
 - 四数之和（No18）
 - 最小覆盖子串（No76）
 
 
 
-#### 6）BFS（广度优先搜索）
+### 6）BFS（广度优先搜索）
 
-**入门题目：**
+#### 入门题目
 
 - 二叉树的锯齿形（No103）
 - 二叉树的序列化（No297）
 - 岛屿数量（No200）
 
-**进阶题目：**
+#### 进阶题目
 
 - 课程表（No207-拓扑排序）
 - 克隆图（No133）
@@ -198,9 +200,9 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 
 
-#### 7）DFS（深度优先搜索）
+### 7）DFS（深度优先搜索）
 
-**入门题目：**
+#### 入门题目
 
 - 二叉树的直径（No543）
 - 二叉树中的最大路径和（No124）
@@ -208,7 +210,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 - 验证二叉搜索树（No98）
 - 单词拆分（No139）
 
-**进阶题目：**
+#### 进阶题目
 
 - 矩阵中的最长递增（No329）
 - 二叉搜索树中第K小的元素（No230）
@@ -219,7 +221,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 - 交错字符串（No97）
 - N皇后（No51）
 
-**分治/回溯题目：**
+#### 分治/回溯题目
 
 - 从前序和中序获取树（No105）
 - 子集（No78）
@@ -229,34 +231,34 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 
 
-#### 8）单调栈/队列类
+### 8）单调栈/队列类
 
-**入门题目：**
+#### 入门题目
 
 - 每日温度（No739）
 
-**进阶题目：**
+#### 进阶题目
 
 - 滑动窗口最大值（No239）
 
 
 
-#### 9）前缀和
+### 9）前缀和
 
-**入门题目：**
+#### 入门题目
 
 - 最大子序和（No53）
 - 连续的子数组和（No523）
 
-**进阶题目：**
+#### 进阶题目
 
 - 滑动窗口最大值（No239）
 
 
 
-#### 10）动态规划
+### 10）动态规划
 
-**入门题目：**
+#### 入门题目
 
 - 不同路径（No62）
 - 最小路径和（No64）
@@ -266,7 +268,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 - 打家劫舍II（No213）
 - 最长有效括号（No32）
 
-**进阶题目：**
+#### 进阶题目
 
 - 跳跃游戏II（No45）
 - 字符串匹配（No44）
@@ -278,39 +280,39 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 
 
-### 1.2 海量数据问题
+## 1.2 海量数据问题
 
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484469&idx=1&sn=ef1f8e05dd4656a3f0379d953050fe71&chksm=ecac503cdbdbd92abd193c55778e7aa6216d7c66666a12ed2b457000a520b45ceed45297a919&token=55044055&lang=zh_CN#rd">经典海量数据问题</a>
 
 
 
-### 1.3 智力测试题
+## 1.3 智力测试题
 
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484385&idx=1&sn=f2b84bb6906bfc11b3f3a496019430b0&chksm=ecac57e8dbdbdefe637eb44a28ddf54760e6ee70577a85ea3cc5211f95fadf24e16a9af2707e&token=55044055&lang=zh_CN#rd">整理一些不考智力的智力题</a>
 
 
 
-## 2. 计算机网络
+# 2. 计算机网络
 
-### 2.1 TCP/UDP 协议
+## 2.1 TCP/UDP 协议
 
 - [TCP 三次握手与四次挥手](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484223&idx=1&sn=cc70375c292d8e3ba966771965d75efc&chksm=ecac5736dbdbde204e0a4f243ff7b575602738c502e1b90cb5a21e848a3d7bf65cc5b4bd29bd&scene=21#wechat_redirect)
 
 
 
-### 2.2 HTTP/HTTPs 协议
+## 2.2 HTTP/HTTPs 协议
 
 - [告诉老默，我想用 HTTPs 了](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484330&idx=1&sn=95b0ed6637ad7dcea0983fa1b7abe662&chksm=ecac57a3dbdbdeb53c6b264a9e91abd4e90b4cad33b09b8cedc9b4ce771ad458c3e8066f2d68&scene=21#wechat_redirect)
 
 
 
-### 2.3 TCP/IP 网络编程
+## 2.3 TCP/IP 网络编程
 
-### 2.4 Cookie 与 Session
+## 2.4 Cookie 与 Session
 
 
 
-## 3. 操作系统与计算机组原
+# 3. 操作系统与计算机组原
 
 ### 3.1 内存管理
 
@@ -322,7 +324,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 
 
-## 4. 数据库
+# 4. 数据库
 
 ### 4.1 MySQL
 
@@ -344,7 +346,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 
 
-## 5. 消息中间件
+# 5. 消息中间件
 
 ### 5.1 Kafka
 
@@ -352,7 +354,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 
 
-## 6. Linux 入门与进阶
+# 6. Linux 入门与进阶
 
 ### 6.1 常用 Linux 命令大全
 
@@ -364,7 +366,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 
 
-## 7. 重构与设计模式
+# 7. 重构与设计模式
 
 ### 7.1 重构
 
@@ -382,7 +384,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 
 
-## 8. 编程语言
+# 8. 编程语言
 
 ### 8.1 Golang
 
@@ -423,6 +425,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 - [Swagger 自动生成 API 文档（开发者实用工具）](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484288&idx=1&sn=974a56eaa286c7c83c25b9c077e8388b&chksm=ecac5789dbdbde9fbf82682500f3c753d0538ed69e1d7bdc9d87a31eed8dca3f91334e2a56ab&scene=21#wechat_redirect)
 
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484452&idx=1&sn=14f0267e9bf15ae94fc53cb90eda7c3c&chksm=ecac502ddbdbd93b37ab5cf11cd38660c760a844e4455990a53500cd4986befd031a4a68f093&token=55044055&lang=zh_CN#rd">gRPC响应ChatGPT流式问答</a>
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484618&idx=1&sn=e6c36c497df7acac9239747e6fe36142&chksm=ecac50c3dbdbd9d57d3662b840a9f653f2bca931909ab01a751aa374a31e25e3f0e7d905afd4&token=1097967098&lang=zh_CN#rd">Go错误码设计与管理实践</a>
 
 
 
@@ -436,7 +439,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 
 
-## 9. 架构设计
+# 9. 架构设计
 
 ### 9.1 架构优化
 
@@ -444,10 +447,11 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 - [听说你学过架构设计？来，弄个短链系统](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484230&idx=1&sn=89cd8cc063700baa28d2190287742a38&chksm=ecac574fdbdbde591a43b97147cd4e201eff5b0f8a16e607ea0e82885db0226481ad10e60911&scene=21#wechat_redirect)
 - [听说你学过架构设计？来，弄个微博系统](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484310&idx=1&sn=33a4df6dea986ca17da75cf8513b1dbb&chksm=ecac579fdbdbde89f92927f16505eef7d31c826b6d911f1257c3bdfa7e16f133b666bc8492d0&scene=21#wechat_redirect)
+- <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484653&idx=1&sn=44bef7d1e9530018da6be609fc4e57d2&chksm=ecac50e4dbdbd9f23ac9d1ce81628662e482ff57c95c51b8a6fb9858f8128793066128acbca7&token=1097967098&lang=zh_CN#rd">听说你学过架构设计？来，弄个打车系统</a>
 
 
 
-## 10. 分布式与高可用
+# 10. 分布式与高可用
 
 ### 10.1 CAP/BASE 理论
 
@@ -457,17 +461,13 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 
 
-## 11. 微服务
+# 11. 微服务
 
-### 11.1 单体架构演进
-
-### 11.2 服务发现
-
-### 11.3 服务间通信
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484630&idx=1&sn=efb9ba13b0db966c5d48ab49a7a57ec0&chksm=ecac50dfdbdbd9c907885a765166cba3ccd4b3a11727e5dea3d0c077dbcdab1fc2ab64646b4b&token=1097967098&lang=zh_CN#rd">都2023了，还有人不了解微服务吗</a>
 
 
 
-## 12. Docker 与 K8s
+# 12. Docker 与 K8s
 
 ### 12.1 docker 容器化实践
 
@@ -477,19 +477,27 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 
 
-## 13. 数据序列号协议
+# 13. 数据序列化协议
+
+### 13.1 Json
+
+### 13.2 ProtoBuffer
 
 
 
-## 14. 常用开发工具
+# 14. 常用开发工具
 
 ### 14.1 Git
 
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484586&idx=1&sn=8eac490d874e3fee2cf6c2ce541ed661&chksm=ecac50a3dbdbd9b51320e3c6f1884e6a01abbd9badd0e119f777d2c205af2ff6aee3b6bc4189&token=1097967098&lang=zh_CN#rd">代码管理工具的扛把子-Git</a>
+
 ### 14.2 Typora
 
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484611&idx=1&sn=a0050c2b7b27099028b16fba7749005e&chksm=ecac50cadbdbd9dc83e995da039c5ea524d665316a2ca6d774cc8a5d5abf5154e0af97440a41&token=1097967098&lang=zh_CN#rd">如何DIY你自己的Typora文档</a>
 
 
-## 15. 饮码江湖
+
+# 15. 饮码江湖
 
 ### 15.1 README
 
@@ -511,3 +519,4 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 ### 15.3 面经
 
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484461&idx=1&sn=a278bc04ae023fba780ef792fead2362&chksm=ecac5024dbdbd9325eb5535fecf717085625e17f8245d0bcd4aec7d2d942cd813ec6fdeb3ae3&token=55044055&lang=zh_CN#rd">大厂面试都会问什么</a>
+
