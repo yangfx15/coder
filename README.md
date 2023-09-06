@@ -316,6 +316,8 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 ### 3.1 内存管理
 
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484428&idx=1&sn=732ab17abcb07262d48b5bec64bdb8d6&chksm=ecac5005dbdbd9132424f59f0cf6188ce5412c75083fc781b2bc3c68592759c1a1b0542635cf&token=1255539741&lang=zh_CN#rd">一文带你认识内存管理</a>
+
 ### 3.2 进程调度
 
 ### 3.3 网络 IO 模型
@@ -518,5 +520,22 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 ### 15.3 面经
 
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484469&idx=1&sn=ef1f8e05dd4656a3f0379d953050fe71&chksm=ecac503cdbdbd92abd193c55778e7aa6216d7c66666a12ed2b457000a520b45ceed45297a919&token=55044055&lang=zh_CN#rd">经典海量数据问题</a>
+
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484461&idx=1&sn=a278bc04ae023fba780ef792fead2362&chksm=ecac5024dbdbd9325eb5535fecf717085625e17f8245d0bcd4aec7d2d942cd813ec6fdeb3ae3&token=55044055&lang=zh_CN#rd">大厂面试都会问什么</a>
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484428&idx=1&sn=732ab17abcb07262d48b5bec64bdb8d6&chksm=ecac5005dbdbd9132424f59f0cf6188ce5412c75083fc781b2bc3c68592759c1a1b0542635cf&token=1255539741&lang=zh_CN#rd">一文带你认识内存管理</a>
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484385&idx=1&sn=f2b84bb6906bfc11b3f3a496019430b0&chksm=ecac57e8dbdbdefe637eb44a28ddf54760e6ee70577a85ea3cc5211f95fadf24e16a9af2707e&token=55044055&lang=zh_CN#rd">整理一些不考智力的智力题</a>
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484373&idx=1&sn=ca61fbfae1958908688d8d404ef9acaf&chksm=ecac57dcdbdbdeca1b0458e2bf91aae680b85867a5ef4c359fea22d96519675a61338e99c093&token=55044055&lang=zh_CN#rd">Redis持久化都说不明白？那今天先到这吧~</a>
+* <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484344&idx=1&sn=66545b924dffa4ccb6d0cd334f56ef93&chksm=ecac57b1dbdbdea76ea384e2cf36bca800ce8961a4a9002d9d98f2e2ea722355905a43f98f82&token=55044055&lang=zh_CN#rd">map都不知道，怎么写代码？</a>
+* [告诉老默，我想用 HTTPs 了](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484330&idx=1&sn=95b0ed6637ad7dcea0983fa1b7abe662&chksm=ecac57a3dbdbdeb53c6b264a9e91abd4e90b4cad33b09b8cedc9b4ce771ad458c3e8066f2d68&scene=21#wechat_redirect)
+
+* [TCP 三次握手与四次挥手](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484223&idx=1&sn=cc70375c292d8e3ba966771965d75efc&chksm=ecac5736dbdbde204e0a4f243ff7b575602738c502e1b90cb5a21e848a3d7bf65cc5b4bd29bd&scene=21#wechat_redirect)
+
+* [GO 垃圾回收](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484217&idx=1&sn=d464e95dcec6252b5e00a5f634a46892&chksm=ecac5730dbdbde26005ba864ab324a3a2c9b90f42c5ce037eb4f5eee36a4e55a4385421d9dd3&scene=21#wechat_redirect)
+
+* [GPM 调度模型](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484182&idx=1&sn=6d3f54eea5622a2d7f6323cbb553fdd8&chksm=ecac571fdbdbde09cc8beb982e5df0caafdf5c87587cd3fbd69ca86c33724e9368ab957beac3&scene=21#wechat_redirect)
+* [Redis IO多路复用](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484093&idx=1&sn=e173c294e8362e43fb36abf27d20cc30&chksm=ecac56b4dbdbdfa271cedbf3cd9e7c87ad7c7318d493f560b4fd814f277a3d50415ee8fd56f4&scene=21#wechat_redirect)
+
+- [Redis数据结构的底层原理](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484077&idx=1&sn=05b873433b81351db83db4d90a569192&chksm=ecac56a4dbdbdfb2562a08f47e9c2b240008903f6cd8b91df6cde69bdb2814908d771be846cb&scene=21#wechat_redirect)
+- [MySQL硬核知识点总结](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484042&idx=1&sn=1620b3df43419745708f6f4c60a9ad9a&chksm=ecac5683dbdbdf95197214ec82fe119ce0bc64c95b6806a8124a381f2c01131d41d6678b87e6&scene=21#wechat_redirect)
 
