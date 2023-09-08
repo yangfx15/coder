@@ -1,0 +1,53 @@
+syntax = "proto3";
+
+option go_package = "./;chat_controll";
+
+package chat_controller;
+
+// ChatControll chat中控服务
+service ChatControll {
+  // Chat
+  rpc Chat(ChatRequest) returns (stream  ChatReply) {}
+}
+
+// 交互的数据内容
+message ChatData{
+  repeated QueryMessage msg=1; // 消息内容。是一个QueryMessage数组，按照时间先后进行排序，最后一个message是本次的消息内容
+  string auditStrategy=2; // 安全策略
+}
+
+// Chat请求参数
+message ChatRequest {
+  string traceId = 1; // 追踪各个模块的id
+  string userId = 2; // 用户id
+  string sessionId = 3; // 一次会话的id
+  ChatData data = 4;  //
+}
+
+// chat的回复,可能后面会携带参考信息等其他字段
+message ChatAnswer{
+  string content = 1; //
+}
+
+// Chat返回
+message ChatReply {
+  string traceId = 1;  // 追踪各个模块的id
+  int32 code = 2; // 错误码
+  string msg =3 ; // 错误码解释的消息
+  ChatAnswer data = 4; // 实际返回的数据，这里是本次chat的返回内容。
+}
+
+// chat的交互消息
+message QueryMessage {
+  // 交互消息中的角色，只有两个角色。一个是人类，即提问题的人；一个是chat助手，即回答的人。
+  enum Role {
+    // 人类
+    HUMAN = 0;
+    // chat助手
+    ASSISTANT = 1;
+  }
+  // 本条消息的角色
+  Role role = 1;
+  // 消息内容
+  string content = 2;
+}
