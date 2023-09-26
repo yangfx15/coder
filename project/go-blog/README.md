@@ -76,7 +76,50 @@ go 1.20
 require github.com/gin-gonic/gin v1.9.1
 ```
 
-这时，看到新增一个 gin v1.9.1 的包，当前最新版本【北京时间：2023-09-25】。
+这时，看到新增一个 gin v1.9.1【当前最新版本】 的包。
+
+
+
+## 项目目录和 API 结构
+
+初始化项目成功后，我们接下来：
+
+* 规划一下目录结构
+* 自定义验证器
+* 制定 API 返回结构
+
+
+
+## 目录结构
+
+规划目录结构时，我们主要关注配置、业务实现的三层：cmd（controller控制转发）、service（业务实现）和 repo（数据库管理）。
+
+> D:.
+> ├─config   #配置文件存放
+> ├─internal	#业务实现
+> │  ├─cmd	#控制转发
+> │  ├─config	#配置协议
+> │  ├─global	#存放公共方法
+> │  ├─initialize	#初始化
+> │  │  └─viper	#监听插件
+> │  ├─logger	#日志
+> │  ├─protocols	#业务相关的协议
+> │  │  ├─user	#用户相关的业务
+> │  │  └─article	#文章相关的业务
+> │  ├─repo	#数据库管理
+> │  │  ├─db	#关系型数据库
+> │  │  │  └─mysql
+> │  │  │      └─model
+> │  │  │          ├─user
+> │  │  │          ├─article
+> │  │  └─kv	#非关系型数据库
+> │  ├─service	#业务实现
+> │  │  ├─user
+> │  │  └─article
+> │  └─utils	#工具包
+> └─script #运行脚本
+
+
 
 
 
