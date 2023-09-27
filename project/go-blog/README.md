@@ -123,4 +123,8 @@ require github.com/gin-gonic/gin v1.9.1
 
 
 
-参考：https://github.com/xinliangnote/Go/blob/master/03-go-gin-api%20%5B%E6%96%87%E6%A1%A3%5D/01-%5Bgo-gin-api%5D%20%E4%BD%BF%E7%94%A8%20go%20modules%20%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE.md
+参考：
+
+go-gin-api：https://github.com/xinliangnote/Go/blob/master/03-go-gin-api%20%5B%E6%96%87%E6%A1%A3%5D/01-%5Bgo-gin-api%5D%20%E4%BD%BF%E7%94%A8%20go%20modules%20%E5%88%9D%E5%A7%8B%E5%8C%96%E9%A1%B9%E7%9B%AE.md
+
+ngrok内网穿透：https://blog.csdn.net/can_chen/article/details/106018711
