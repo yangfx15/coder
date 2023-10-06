@@ -4,7 +4,7 @@
 
 
 
-GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a> 
+GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GitHub</a>
 
 > 防止上面的链接无法跳转：https://github.com/yangfx15/coder
 
@@ -95,12 +95,10 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 ### 1）<a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484365&idx=1&sn=d0a1195fa364ec9780132900fd21c90d&chksm=ecac57c4dbdbded26bbcb03a222f74cf60f99a668d6deaae11731bd075fed799cc3f5d65296d&token=55044055&lang=zh_CN#rd">排序类题目（涵盖入门和进阶题目，含代码解析）</a>
 
-#### 入门题目
+#### 题目列表
 
 - 排序链表（No148）
 - 合并区间（No56）
-
-#### 进阶题目
 
 - 数组中第K个最大元素（No215）
 - 寻找两个正序数组的中位数（No4）
@@ -310,6 +308,8 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 ## 2.4 Cookie 与 Session
 
+[状态管理小能手：Cookie 和 Session](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485011&idx=1&sn=298e9e6ccf4a0403675efca14b76c748&chksm=ecac525adbdbdb4cb9ada7f57d998fe8ef2747924e154fa7fb7860aaa971eded44c213e4b3ff#rd)
+
 
 
 # 3. 操作系统与计算机组原
@@ -331,8 +331,11 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 ### 4.1 MySQL
 
 - [MySQL硬核知识点总结](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484042&idx=1&sn=1620b3df43419745708f6f4c60a9ad9a&chksm=ecac5683dbdbdf95197214ec82fe119ce0bc64c95b6806a8124a381f2c01131d41d6678b87e6&scene=21#wechat_redirect)
+- [MySQL高可用：分库分表你学废了吗？](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484972&idx=1&sn=421dc791c11563d9681782963a6b65d9&chksm=ecac5225dbdbdb33852d455876fded0df4f08f7e211675b8ea14d3bf7bd2512c5cfcee6951c4#rd)
+- [解锁MySQL的黑科技：事务与隔离](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484917&idx=1&sn=b37e3edd5752e68a646edacec85f7395&chksm=ecac51fcdbdbd8ea1939e6fb7aa493a9304856cd6eafb6d417bb586b5cb073ae63721b55be93#rd)
+- [一张图看懂 SQL 执行过程](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484875&idx=1&sn=cc741c241cb4b0ee54713b9a2469e54e&chksm=ecac51c2dbdbd8d48bdb3d0c922f98b160f8ab54537454adbdfdca925b28a7019e7d74c8353f#rd)
 
-  
+
 
 ### 4.2 Redis
 
@@ -371,6 +374,8 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 # 7. 重构与设计模式
 
 ### 7.1 重构
+
+* [外甥女问我什么是代码洁癖，我是这么回答的...](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484696&idx=1&sn=d49f5d1fdddf54733aab6a4b98eca1c2&chksm=ecac5111dbdbd807045cfca4b6f521b75443cdcde5c311acb4ea9e82cf5e171b032a38ad9bac#rd)
 
 
 
@@ -450,6 +455,8 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 - [听说你学过架构设计？来，弄个短链系统](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484230&idx=1&sn=89cd8cc063700baa28d2190287742a38&chksm=ecac574fdbdbde591a43b97147cd4e201eff5b0f8a16e607ea0e82885db0226481ad10e60911&scene=21#wechat_redirect)
 - [听说你学过架构设计？来，弄个微博系统](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484310&idx=1&sn=33a4df6dea986ca17da75cf8513b1dbb&chksm=ecac579fdbdbde89f92927f16505eef7d31c826b6d911f1257c3bdfa7e16f133b666bc8492d0&scene=21#wechat_redirect)
 - <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484653&idx=1&sn=44bef7d1e9530018da6be609fc4e57d2&chksm=ecac50e4dbdbd9f23ac9d1ce81628662e482ff57c95c51b8a6fb9858f8128793066128acbca7&token=1097967098&lang=zh_CN#rd">听说你学过架构设计？来，弄个打车系统</a>
+- [听说你会架构设计？来，弄一个评论系统](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484740&idx=1&sn=a92c71bf4b70d611ca880ee38d4393bf&chksm=ecac514ddbdbd85b6c8ca03e900d2f7850fb2795aa7d1e8b1d73a4bb9a1c4e527eb309b480cf#rd)
+- [听说你会架构设计？来，弄一个网盘系统](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484952&idx=1&sn=baa9da16bb52cbf6ee17d9868cacc5c6&chksm=ecac5211dbdbdb07ea31acb4fbf77cfab87c2d45bd89637d86b23499b0e2f6bc101686883748#rd)
 
 
 
@@ -457,9 +464,15 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 
 ### 10.1 CAP/BASE 理论
 
+* [深入浅出：分布式、CAP 和 BASE 理论](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484896&idx=1&sn=60dd09486fc9ecc652af917d8a311419&chksm=ecac51e9dbdbd8ffc10b79699ea7e4a8fb00aabc743b15cc5c3311970a9e3046592cbb879364#rd)
+
+
+
 ### 10.2 分布式事务
 
 ### 10.3 系统高可用设计
+
+* [面试官：若我问到高可用，阁下又该如何应对呢？](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484680&idx=1&sn=42d76236dfaf5220fa09c1f36eb1d421&chksm=ecac5101dbdbd81706efd91490aa69ec56d9f92687f664cf48f52f64709ce1b5f10eaa0e3b2a#rd)
 
 
 
@@ -504,6 +517,8 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GItHub</a
 ### 15.1 README
 
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484522&idx=1&sn=d716a78a0526dd69291832be705d20b6&chksm=ecac5063dbdbd9759252e8b31fec30d9b7ebf4d7b2c1049de34882d62925a2d20c27e2de9690&token=55044055&lang=zh_CN#rd">26岁程序员体检，脑袋中有一个鸽子蛋般的肿瘤...</a>
+* [JetBrains 破解教程最新版本，一键激活【亲测有效】](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484726&idx=1&sn=e2dcc9100a129a695d6c9b6e03f4a70a&chksm=ecac513fdbdbd8296a31ddae121a9ea0821b3d36c13089294d1f14a91a6d0bc0501ed156b431#rd)
+* [免费资源整理](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484931&idx=1&sn=b3528f69d246e93e5cabab9a4cb95bfe&chksm=ecac520adbdbdb1cf8a8ce5555801cdeb230eb6cb78c3ed5a3c3114a228e50ffa1dc34210978#rd)
 
 
 
