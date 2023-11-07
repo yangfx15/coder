@@ -353,9 +353,13 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GitHub</a
 
 # 5. 消息中间件
 
+* [应对流量高峰的利器——消息中间件](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485140&idx=1&sn=62aa2a762363cc8c704fc427ef50a2b6&chksm=ecac52dddbdbdbcb3f2aa1e0178e17acfa0357b3f945e15caf92f62a3cfbce4c28b3a143250c#rd)
+
 ### 5.1 Kafka
 
 ### 5.2 RabbitMQ
+
+* [深入浅出RabbitMQ：顺序消费、死信队列和延时队列](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485213&idx=1&sn=62e175c9fe41b5db13081dc8c975b298&chksm=ecac5314dbdbda02183d57501c4e15e9e432689c0ef94cfd17f0a062c544ce65e0e781091c83#rd)
 
 
 
@@ -457,6 +461,8 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GitHub</a
 - <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484653&idx=1&sn=44bef7d1e9530018da6be609fc4e57d2&chksm=ecac50e4dbdbd9f23ac9d1ce81628662e482ff57c95c51b8a6fb9858f8128793066128acbca7&token=1097967098&lang=zh_CN#rd">听说你学过架构设计？来，弄个打车系统</a>
 - [听说你会架构设计？来，弄一个评论系统](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484740&idx=1&sn=a92c71bf4b70d611ca880ee38d4393bf&chksm=ecac514ddbdbd85b6c8ca03e900d2f7850fb2795aa7d1e8b1d73a4bb9a1c4e527eb309b480cf#rd)
 - [听说你会架构设计？来，弄一个网盘系统](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484952&idx=1&sn=baa9da16bb52cbf6ee17d9868cacc5c6&chksm=ecac5211dbdbdb07ea31acb4fbf77cfab87c2d45bd89637d86b23499b0e2f6bc101686883748#rd)
+- [听说你会架构设计？来，弄一个公交&地铁乘车系统](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485064&idx=1&sn=c640638fd65e559c3a747bbdfcf189d4&chksm=ecac5281dbdbdb9770e2f048a23e71064176a30b044f60add9b273683279fc541e2031de3a6e#rd)
+- [听说你会架构设计？来，弄一个微信群聊系统](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485201&idx=1&sn=5b14c748222a42cb474c01d07bfc8601&chksm=ecac5318dbdbda0ee59db60d7502afcafea5e120039b091fffd06e2eeacd9c456f0ca6b9cf7c#rd)
 
 
 
@@ -468,11 +474,17 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GitHub</a
 
 
 
-### 10.2 分布式事务
+### 10.2 分布式
 
-### 10.3 系统高可用设计
+* [说出来你可能不信，分布式锁竟然这么简单...](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485092&idx=1&sn=f948b050ae2656e00e841c14c75c9aef&chksm=ecac52addbdbdbbb0b7c622972cdac50b25e4be177993df8282ba9f6f22fab11ea37ecd9cf11#rd)
+
+
+
+### 10.3 高可用、高并发
 
 * [面试官：若我问到高可用，阁下又该如何应对呢？](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484680&idx=1&sn=42d76236dfaf5220fa09c1f36eb1d421&chksm=ecac5101dbdbd81706efd91490aa69ec56d9f92687f664cf48f52f64709ce1b5f10eaa0e3b2a#rd)
+
+* [面试薪水被压？那是你还不懂多线程和高并发](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485109&idx=1&sn=c73198ee1095ad9270f9d27c9c1e87fd&chksm=ecac52bcdbdbdbaa52eca5855617ea88993e2136ded91aff191297f002d0e3a19b645c98d66e#rd)
 
 
 
@@ -502,13 +514,12 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GitHub</a
 
 # 14. 常用开发工具
 
-### 14.1 Git
-
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484586&idx=1&sn=8eac490d874e3fee2cf6c2ce541ed661&chksm=ecac50a3dbdbd9b51320e3c6f1884e6a01abbd9badd0e119f777d2c205af2ff6aee3b6bc4189&token=1097967098&lang=zh_CN#rd">代码管理工具的扛把子-Git</a>
 
-### 14.2 Typora
-
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484611&idx=1&sn=a0050c2b7b27099028b16fba7749005e&chksm=ecac50cadbdbd9dc83e995da039c5ea524d665316a2ca6d774cc8a5d5abf5154e0af97440a41&token=1097967098&lang=zh_CN#rd">如何DIY你自己的Typora文档</a>
+* [JetBrains 破解教程最新版本，一键激活【亲测有效】](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484726&idx=1&sn=e2dcc9100a129a695d6c9b6e03f4a70a&chksm=ecac513fdbdbd8296a31ddae121a9ea0821b3d36c13089294d1f14a91a6d0bc0501ed156b431#rd)
+* [免费资源整理](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484931&idx=1&sn=b3528f69d246e93e5cabab9a4cb95bfe&chksm=ecac520adbdbdb1cf8a8ce5555801cdeb230eb6cb78c3ed5a3c3114a228e50ffa1dc34210978#rd)
+* [谁懂啊，语雀故障的那7个小时我是怎么过来的](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485183&idx=1&sn=ac23358c549d926df8e6d046c4f35e80&chksm=ecac52f6dbdbdbe0d96e795f0247ebda84c74ae4b125620672e63dfb149b0a1a3438868f18b1#rd)
 
 
 
@@ -517,8 +528,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GitHub</a
 ### 15.1 README
 
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484522&idx=1&sn=d716a78a0526dd69291832be705d20b6&chksm=ecac5063dbdbd9759252e8b31fec30d9b7ebf4d7b2c1049de34882d62925a2d20c27e2de9690&token=55044055&lang=zh_CN#rd">26岁程序员体检，脑袋中有一个鸽子蛋般的肿瘤...</a>
-* [JetBrains 破解教程最新版本，一键激活【亲测有效】](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484726&idx=1&sn=e2dcc9100a129a695d6c9b6e03f4a70a&chksm=ecac513fdbdbd8296a31ddae121a9ea0821b3d36c13089294d1f14a91a6d0bc0501ed156b431#rd)
-* [免费资源整理](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484931&idx=1&sn=b3528f69d246e93e5cabab9a4cb95bfe&chksm=ecac520adbdbdb1cf8a8ce5555801cdeb230eb6cb78c3ed5a3c3114a228e50ffa1dc34210978#rd)
+* [打工人回村的双节怎么过的](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485040&idx=1&sn=ecce5aa477b8878ed059f8104e154dda&chksm=ecac5279dbdbdb6f01a5a2f192a042516ebd50f3bd66f5ace41e29e1917db883f55f0498c9e9#rd)
 
 
 
@@ -530,6 +540,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GitHub</a
 
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484410&idx=1&sn=e96622284a64204e2bf2d79bdadb4370&chksm=ecac57f3dbdbdee5fff3575a44c801f5841ba700b2ff1c04b0e55a4762405a6ad49984a4a3a0&token=55044055&lang=zh_CN#rd">OpenAI 发布 GPT-4，有哪些技术上的优化或突破？</a>
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484476&idx=1&sn=d566a34e0764bff9580079261e5903dd&chksm=ecac5035dbdbd923ba373c595b9b01c0fb387386b3300104c8f5ab32fdc659b0291369ef07d3&token=55044055&lang=zh_CN#rd">从数据标注看机器学习</a>
+* [震惊！翻墙3年挣百万，非法收入被没收](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485066&idx=1&sn=fa0a23433c8cb101b9a86c4747ac30d8&chksm=ecac5283dbdbdb9564a8f9e857021cbdd8bc7110b687d8fe43bc308d303a438a279e56e7f425#rd)
 
 
 
