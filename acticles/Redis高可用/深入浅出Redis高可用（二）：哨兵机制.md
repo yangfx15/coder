@@ -187,6 +187,22 @@ Redis 中，哨兵集群会向重新上线的旧主节点发送 `SLAVEOF` 命令
 
 
 
+
+
+https://www.xiaolincoding.com/redis/cluster/sentinel.html#%E6%AD%A5%E9%AA%A4%E4%B8%89-%E9%80%9A%E7%9F%A5%E5%AE%A2%E6%88%B7%E7%9A%84%E4%B8%BB%E8%8A%82%E7%82%B9%E5%B7%B2%E6%9B%B4%E6%8D%A2
+
+
+
+https://pdai.tech/md/db/nosql-redis/db-redis-x-sentinel.html
+
+
+
+https://ost.51cto.com/posts/11516
+
+
+
+
+
 ## 4. 小结
 
 在真实的互联网应用上，Redis 为了保证高可用和分担读写压力，几乎都会采取主从复制的部署架构。一方面让架构`易于扩展`，另一方面防止`单体故障`：当主库挂了，可以立即拉起从库，不至于让业务停滞太久。
