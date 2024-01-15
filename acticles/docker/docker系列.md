@@ -24,12 +24,7 @@ Docker 和虚拟机一样，都是隔离资源，保证系统安全，并提高�
 
 Docker 镜像是 docker 容器的源代码，镜像用于创建容器。镜像的构建命令是 “docker build”，也可以写成 Dockerfile 脚本来创建 docker 镜像。
 
-当 overlay2 文件被删，启动不了新容器时，报错：Error response from daemon: stat /var/lib/docker/overlay2/
 
-```python
- # 缓存镜像层的问题，要清除缓存镜像层
-docker system prune -a  
-```
 
 #### 2.2 docker 容器
 
