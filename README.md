@@ -278,14 +278,9 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GitHub</a
 
 
 
-## 1.2 海量数据问题
+## 1.2 智力题和海量数据问题
 
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484469&idx=1&sn=ef1f8e05dd4656a3f0379d953050fe71&chksm=ecac503cdbdbd92abd193c55778e7aa6216d7c66666a12ed2b457000a520b45ceed45297a919&token=55044055&lang=zh_CN#rd">经典海量数据问题</a>
-
-
-
-## 1.3 智力测试题
-
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484385&idx=1&sn=f2b84bb6906bfc11b3f3a496019430b0&chksm=ecac57e8dbdbdefe637eb44a28ddf54760e6ee70577a85ea3cc5211f95fadf24e16a9af2707e&token=55044055&lang=zh_CN#rd">整理一些不考智力的智力题</a>
 
 
@@ -308,7 +303,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GitHub</a
 
 ## 2.4 Cookie 与 Session
 
-[状态管理小能手：Cookie 和 Session](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485011&idx=1&sn=298e9e6ccf4a0403675efca14b76c748&chksm=ecac525adbdbdb4cb9ada7f57d998fe8ef2747924e154fa7fb7860aaa971eded44c213e4b3ff#rd)
+* [状态管理小能手：Cookie 和 Session](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485011&idx=1&sn=298e9e6ccf4a0403675efca14b76c748&chksm=ecac525adbdbdb4cb9ada7f57d998fe8ef2747924e154fa7fb7860aaa971eded44c213e4b3ff#rd)
 
 
 
@@ -342,6 +337,10 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GitHub</a
 - [Redis数据结构的底层原理](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484077&idx=1&sn=05b873433b81351db83db4d90a569192&chksm=ecac56a4dbdbdfb2562a08f47e9c2b240008903f6cd8b91df6cde69bdb2814908d771be846cb&scene=21#wechat_redirect)
 - [Redis IO多路复用](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484093&idx=1&sn=e173c294e8362e43fb36abf27d20cc30&chksm=ecac56b4dbdbdfa271cedbf3cd9e7c87ad7c7318d493f560b4fd814f277a3d50415ee8fd56f4&scene=21#wechat_redirect)
 - <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484373&idx=1&sn=ca61fbfae1958908688d8d404ef9acaf&chksm=ecac57dcdbdbdeca1b0458e2bf91aae680b85867a5ef4c359fea22d96519675a61338e99c093&token=55044055&lang=zh_CN#rd">Redis持久化都说不明白？那今天先到这吧~</a>
+- [救命！只有我还不明白Redis主从复制的原理吗？](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485225&idx=1&sn=761feb02c973cc7b2ecdcc9b9124b070&chksm=ecac5320dbdbda36d147b027db413b324b5e0d31760e71b5b52fbec9af51bb3261475a27b973#rd)
+- [深入浅出Redis高可用：哨兵机制](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485363&idx=1&sn=c3568d661ab3136bf38accb0b3720192&chksm=ecac53badbdbdaac73ae2e87ae827b94564e9cc06b17a3ba82148a32913bc9690da99b81ed2b#rd)
+- [Redis高可用：武林秘籍存在集群里，那稳了~](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485487&idx=1&sn=b005f993944ed72783675d110de410f1&chksm=ecac5c26dbdbd53001969519a6c90b156600ac6fe43ada939f5ac5335f644981cffcc726f212#rd)
+- [Redis如何为 List/Set/Hash 的元素设置单独的过期时间](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485532&idx=1&sn=52dc4322513628e4e6f4d289eb6247f5&chksm=ecac5c55dbdbd543a1cc0ca0b147db63cc1a7ebe46bbefeec6182b0a0bc92c838c6f6c7108c4#rd)
 
 
 
@@ -355,7 +354,14 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GitHub</a
 
 * [应对流量高峰的利器——消息中间件](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485140&idx=1&sn=62aa2a762363cc8c704fc427ef50a2b6&chksm=ecac52dddbdbdbcb3f2aa1e0178e17acfa0357b3f945e15caf92f62a3cfbce4c28b3a143250c#rd)
 
+
+
 ### 5.1 Kafka
+
+* [走近Kafka：大数据领域的不败王者](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485668&idx=1&sn=df37577dcd24d4a7cc32408af7b18be7&chksm=ecac5ceddbdbd5fb3fca2ddf12f7e3e8d81a0f1fa33bc2cadd5284e2c3b9c925eeb3b864e9fe&token=786211625&lang=zh_CN#rd)
+* [深入浅出Kafka：高可用、顺序消费及幂等性](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485692&idx=1&sn=ac6e0961e888cd69697512030fcabeda&chksm=ecac5cf5dbdbd5e3967ffd986214d9363ddadeb202c86e9fa6507c3f643b8917881c8aceb6ce#rd)
+
+
 
 ### 5.2 RabbitMQ
 
@@ -380,6 +386,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GitHub</a
 ### 7.1 重构
 
 * [外甥女问我什么是代码洁癖，我是这么回答的...](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484696&idx=1&sn=d49f5d1fdddf54733aab6a4b98eca1c2&chksm=ecac5111dbdbd807045cfca4b6f521b75443cdcde5c311acb4ea9e82cf5e171b032a38ad9bac#rd)
+* [让代码在键盘上跳“华尔兹”的10大原则](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485995&idx=1&sn=8df64b40589df43a75343cafe7c85ae0&chksm=ecac5e22dbdbd7349159a867c9d5d7f6a181ac91c0354ce21e98d62bfec7b0078a2611ae0b7e#rd)
 
 
 
@@ -426,17 +433,18 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GitHub</a
 - [并发才是时代的主题，goroutine 帮你快速实现](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247483844&idx=1&sn=09b1841623eaedd17babb6b408eb72d7&chksm=ecac55cddbdbdcdb818cf493920199d1a0ccd7fa25bfd010a55a078abc0772022a4af4eb29d0&scene=21#wechat_redirect)
 - [GPM 调度模型](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484182&idx=1&sn=6d3f54eea5622a2d7f6323cbb553fdd8&chksm=ecac571fdbdbde09cc8beb982e5df0caafdf5c87587cd3fbd69ca86c33724e9368ab957beac3&scene=21#wechat_redirect)
 - <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484344&idx=1&sn=66545b924dffa4ccb6d0cd334f56ef93&chksm=ecac57b1dbdbdea76ea384e2cf36bca800ce8961a4a9002d9d98f2e2ea722355905a43f98f82&token=55044055&lang=zh_CN#rd">map都不知道，怎么写代码？</a>
-- <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484428&idx=1&sn=732ab17abcb07262d48b5bec64bdb8d6&chksm=ecac5005dbdbd9132424f59f0cf6188ce5412c75083fc781b2bc3c68592759c1a1b0542635cf&token=55044055&lang=zh_CN#rd">一文带你认识内存管理</a>
+- [深入浅出内存管理：空间分配及逃逸分析](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485750&idx=1&sn=e98b1546e9a822ec87da48f5c7f17dca&chksm=ecac5d3fdbdbd42967da00fd73d758ab5b2c7a2fe5dcb02042c2843ed1a20e2d7a086acb3eb5#rd)
 
 
 
-#### 4）周边常用框架
+#### 4）周边常用工具
 
 - [Go-swagger 应用](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247483965&idx=1&sn=5d07d2df5a19db748e4646803e60cdd1&chksm=ecac5634dbdbdf22dcc63709cf627e03aa49ee21a8c990fe111fe5f4080e2d9553f2a2f09e41&scene=21#wechat_redirect)
 - [Swagger 自动生成 API 文档（开发者实用工具）](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484288&idx=1&sn=974a56eaa286c7c83c25b9c077e8388b&chksm=ecac5789dbdbde9fbf82682500f3c753d0538ed69e1d7bdc9d87a31eed8dca3f91334e2a56ab&scene=21#wechat_redirect)
 
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484452&idx=1&sn=14f0267e9bf15ae94fc53cb90eda7c3c&chksm=ecac502ddbdbd93b37ab5cf11cd38660c760a844e4455990a53500cd4986befd031a4a68f093&token=55044055&lang=zh_CN#rd">gRPC响应ChatGPT流式问答</a>
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484618&idx=1&sn=e6c36c497df7acac9239747e6fe36142&chksm=ecac50c3dbdbd9d57d3662b840a9f653f2bca931909ab01a751aa374a31e25e3f0e7d905afd4&token=1097967098&lang=zh_CN#rd">Go错误码设计与管理实践</a>
+* [听说你会内存分析？来，pprof一下](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247486018&idx=1&sn=68e7a7176c5a3558705fd14d6d5391d1&chksm=ecac5e4bdbdbd75d8f039e9737609e7781cfb76a5e48c1fd79a655e1409f997052a1ae855d99#rd)
 
 
 
@@ -452,9 +460,7 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GitHub</a
 
 # 9. 架构设计
 
-### 9.1 架构优化
-
-### 9.2 常见系统设计
+### 9.1 常见系统设计
 
 - [听说你学过架构设计？来，弄个短链系统](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484230&idx=1&sn=89cd8cc063700baa28d2190287742a38&chksm=ecac574fdbdbde591a43b97147cd4e201eff5b0f8a16e607ea0e82885db0226481ad10e60911&scene=21#wechat_redirect)
 - [听说你学过架构设计？来，弄个微博系统](http://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484310&idx=1&sn=33a4df6dea986ca17da75cf8513b1dbb&chksm=ecac579fdbdbde89f92927f16505eef7d31c826b6d911f1257c3bdfa7e16f133b666bc8492d0&scene=21#wechat_redirect)
@@ -463,24 +469,27 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GitHub</a
 - [听说你会架构设计？来，弄一个网盘系统](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484952&idx=1&sn=baa9da16bb52cbf6ee17d9868cacc5c6&chksm=ecac5211dbdbdb07ea31acb4fbf77cfab87c2d45bd89637d86b23499b0e2f6bc101686883748#rd)
 - [听说你会架构设计？来，弄一个公交&地铁乘车系统](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485064&idx=1&sn=c640638fd65e559c3a747bbdfcf189d4&chksm=ecac5281dbdbdb9770e2f048a23e71064176a30b044f60add9b273683279fc541e2031de3a6e#rd)
 - [听说你会架构设计？来，弄一个微信群聊系统](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485201&idx=1&sn=5b14c748222a42cb474c01d07bfc8601&chksm=ecac5318dbdbda0ee59db60d7502afcafea5e120039b091fffd06e2eeacd9c456f0ca6b9cf7c#rd)
+- [听说你会架构设计？来，弄一个红包系统](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485554&idx=1&sn=55446985bb6b185babbe444fc73423cf&chksm=ecac5c7bdbdbd56dd5ea8ecdb8cbd472cb2f73fb949ae196ff819df7858459fdb9925669bbe1#rd)
+- [听说你会架构设计？来，弄一个交友系统](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485865&idx=1&sn=74e7e9136ebd4c0285d23c3f0b5e1fdc&chksm=ecac5da0dbdbd4b60a07194733acd33c3b2c42f878eb75a7dbbd990f6000e6cf0a2588c219c0#rd)
+
+
+
+### 9.2 架构优化
 
 
 
 # 10. 分布式与高可用
 
-### 10.1 CAP/BASE 理论
+### 10.1 分布式
 
 * [深入浅出：分布式、CAP 和 BASE 理论](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484896&idx=1&sn=60dd09486fc9ecc652af917d8a311419&chksm=ecac51e9dbdbd8ffc10b79699ea7e4a8fb00aabc743b15cc5c3311970a9e3046592cbb879364#rd)
-
-
-
-### 10.2 分布式
-
 * [说出来你可能不信，分布式锁竟然这么简单...](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485092&idx=1&sn=f948b050ae2656e00e841c14c75c9aef&chksm=ecac52addbdbdbbb0b7c622972cdac50b25e4be177993df8282ba9f6f22fab11ea37ecd9cf11#rd)
+* [算法江湖：揭秘分布式框架下的四大高手](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485935&idx=1&sn=d9120e18bc2ed5f8cb9eabffd0f3eca9&chksm=ecac5de6dbdbd4f0b83ac8bf3558cb9c8bd8bc9572123298e6b71c7fffc02c5185e4fceb84ce#rd)
+* [数据齐舞：深入浅出分布式事务的八奇技](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485762&idx=1&sn=7770c1de5e22b62a5cee1658432e8ff5&chksm=ecac5d4bdbdbd45dd071c9f08a47cb93649773af9170ab41dd719be4c4708c3e67cc82132fff#rd)
 
 
 
-### 10.3 高可用、高并发
+### 10.2 高可用、高并发
 
 * [面试官：若我问到高可用，阁下又该如何应对呢？](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484680&idx=1&sn=42d76236dfaf5220fa09c1f36eb1d421&chksm=ecac5101dbdbd81706efd91490aa69ec56d9f92687f664cf48f52f64709ce1b5f10eaa0e3b2a#rd)
 
@@ -541,6 +550,9 @@ GitHub地址：<a href="https://github.com/yangfx15/coder">点击进入GitHub</a
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484410&idx=1&sn=e96622284a64204e2bf2d79bdadb4370&chksm=ecac57f3dbdbdee5fff3575a44c801f5841ba700b2ff1c04b0e55a4762405a6ad49984a4a3a0&token=55044055&lang=zh_CN#rd">OpenAI 发布 GPT-4，有哪些技术上的优化或突破？</a>
 * <a href="https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247484476&idx=1&sn=d566a34e0764bff9580079261e5903dd&chksm=ecac5035dbdbd923ba373c595b9b01c0fb387386b3300104c8f5ab32fdc659b0291369ef07d3&token=55044055&lang=zh_CN#rd">从数据标注看机器学习</a>
 * [震惊！翻墙3年挣百万，非法收入被没收](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485066&idx=1&sn=fa0a23433c8cb101b9a86c4747ac30d8&chksm=ecac5283dbdbdb9564a8f9e857021cbdd8bc7110b687d8fe43bc308d303a438a279e56e7f425#rd)
+* [谁懂啊，语雀故障的那7个小时我是怎么过来的](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485183&idx=1&sn=ac23358c549d926df8e6d046c4f35e80&chksm=ecac52f6dbdbdbe0d96e795f0247ebda84c74ae4b125620672e63dfb149b0a1a3438868f18b1#rd)
+* [【Error】阿里全系产品崩了](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485382&idx=1&sn=b914f23bf0d68cbf0e80683ed774da04&chksm=ecac53cfdbdbdad98b93b260e02ea2e5a0577c70da3e24a81bd7faa323db956d936eb75e5c7a#rd)
+* [一句“裁员广进”，揭开了多少互联网大厂的遮羞布](https://mp.weixin.qq.com/s?__biz=MzI5Nzk2MDgwNg==&mid=2247485972&idx=1&sn=3b36922da5891b1651fc8043cdcb7494&chksm=ecac5e1ddbdbd70b0d722ec27ba3a16dfbd46b89b8de1abf76f10f0fac0efe35fe3126426436#rd)
 
 
 
