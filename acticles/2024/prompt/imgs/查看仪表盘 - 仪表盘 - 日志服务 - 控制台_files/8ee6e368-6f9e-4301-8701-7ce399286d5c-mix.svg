@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <title>%u6570%u636E%u52A0%u5DE5-16px</title>
+    <g id="%u63A7%u4EF6" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="%u6570%u636E%u52A0%u5DE5-16px" fill-rule="nonzero">
+            <rect id="Rectangle-Copy-6" fill="#696969" opacity="0" x="0" y="0" width="16" height="16"></rect>
+            <path d="M1,15 L8,15 C7.6,14.4 7.3,13.7 7.1,13 L3,13 L3,3 L10.2,3 L13,5.8 L13,7.1 C13.7,7.3 14.4,7.6 15,8 L15,5 L11,1 L1,1 L1,15 Z M9,8 L5,8 L5,6 L11,6 L11,7.1 C10.3,7.3 9.6,7.6 9,8 Z M16,12 C16,10.7 15.4,9.5 14.4,8.8 C14.3316,8.7544 14.2684,8.7088 14.2068,8.66439 C13.9984,8.514 13.8088,8.3772 13.5,8.3 L11.5,11.7 L12.4,12.2 L13.4,10.5 C13.8,10.8 14,11.3 14,11.9 C14,13 13.1,13.9 12,13.9 C10.9,13.9 10,13 10,11.9 C10,11.2 10.4,10.5 11,10.2 L10,8.5 C8.8,9.2 8,10.5 8,12 C8,14.2 9.8,16 12,16 C14.2,16 16,14.2 16,12 Z M7.1,11 C7.3,10.3 7.6,9.6 8,9 L5,9 L5,11 L7.1,11 Z" id="%u5F62%u72B6" fill="#696969"></path>
+        </g>
+    </g>
+</svg>
