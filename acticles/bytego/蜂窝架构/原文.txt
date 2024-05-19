@@ -1,0 +1,314 @@
+Cellular architecture can provide significant benefits for customers and businesses, such as increased availability, resilience, and increased engineering velocity.
+Automating cellular infrastructure requires addressing key problems: isolation, new cell creation, deployment, permissions, and monitoring.
+Cellular architectures rely on effective request routing and monitoring to realize high availability goals.
+Automation can be implemented by infrastructure as code (IaC) and build pipelines, and simplified by adopting standardized application components.
+However, there is no one-size-fits-all solution. Individuals can select the tools that best suit their needs and determine the level of automation implementation.
+﻿
+What is Cellular Architecture?
+Cellular architecture is a design pattern that helps achieve high availability in multi-tenant applications. The goal is to design your application so that you can deploy all of its components into an isolated "cell" that is fully self-sufficient. Then, you create many discrete deployments of these "cells" with no dependencies between them.
+﻿
+Each cell is a fully operational, autonomous instance of your application ready to serve traffic with no dependencies on or interactions with any other cells.
+﻿
+Traffic from your users can be distributed across these cells, and if an outage occurs in one cell, it will only impact the users in that cell while the other cells remain fully operational. This minimizes the "blast radius" of any outages your service may experience and helps ensure that the outage doesn’t impact your SLA for most of your users.
+﻿
+There are many different strategies for organizing your cells and deciding which traffic should be routed to which cell. For more information on the benefits of cellular architecture and some examples of these different strategies, we highly recommend Peter Voshall’s talk from re:Invent 2018: "How AWS Minimizes the Blast Radius of Failures".
+﻿
+Managing an application with many independent cells can be daunting. For this reason, it’s extremely valuable to build as much automation as possible for the common infrastructure tasks necessary for creating and maintaining cells. For the rest of this article, we will focus less on the "why" of cellular architecture and more on the "how" of creating this automation. For more info on the "why," check out Peter’s talk and the links in the Additional Resources section at the end of the article!
+﻿
+Automating Your Cellular Architecture
+In the quest to automate cellular infrastructure, there are five key problems to solve:
+﻿
+Isolation: how do we ensure distinct boundaries between our cells?
+New cells: how do we bring them online consistently and efficiently?
+Deployment: how do we get the latest code changes into each cell?
+Permissions: how do we ensure the cell is secure and manage both its inbound and outbound permissions effectively?
+Monitoring: how does an operator determine the health of all cells at a glance and easily identify which cells are impacted by an outage?
+There are many tools and strategies that can be used to address these problems. This article will discuss the tools and solutions that have worked well for us at Momento.
+﻿
+Before solving these specific problems, though, we will talk a bit about standardization.
+﻿
+Standardization
+Standardizing certain parts of the build/test/deploy life cycle for all of the components in your application makes it much easier to build general-purpose automation around them. And generalizing your automation will make it much easier to re-use your infrastructure code across all the components you need to deploy to each cell.
+﻿
+It’s important to note that we are discussing standardization, not homogenization. Most modern cloud applications are not homogenous. Your application may comprise five different microservices running on some combination of platforms such as Kubernetes, AWS Lambda, and EC2. To build general-purpose automation for all these different types of components, we just need to standardize a few specific parts of their life cycle.
+﻿
+Standardization - Deployment Templates
+So, what do we need to standardize? Let’s think about the steps typically involved in rolling out a code change to the production environment. They might be something like this:
+﻿
+A developer commits code changes to the version control repository.
+We build a binary artifact with the latest changes; this might be a docker image, a JAR file, a ZIP file, or some other artifact.
+The artifact is published or released: the docker image is pushed to a docker repository, the JAR file is pushed to a maven repository, the ZIP file is pushed to some location in cloud storage, etc.
+The artifact is deployed to your production environment(s). This typically involves serially deploying to each of your cells in a cellular environment.
+So, for any given component of our application, this is a rough template of what we want the deployment process to look like:
+﻿
+Figure 1: Minimal deployment template
+Now, one of the goals of cellular architecture is to minimize the blast radius of outages, and one of the most likely times that an outage may occur is immediately after a deployment. So, in practice, we’ll want to add a few protections to our deployment process so that if we detect an issue, we can stop deploying the changes until we’ve resolved it. To that end, adding a "staging" cell that we can deploy to first and  a "bake" period between deployments to subsequent cells is a good idea. During the bake period, we can monitor metrics and alarms and stop the deployment if anything is awry. So now our deployment template for any given component might look more like this:
+﻿
+Figure 2: Deployment template with "bake" stages
+Now, our goal is to generalize our automation so that it’s easy to achieve this set of deployment steps for any application component, regardless of the technology that the component is built on.
+﻿
+Many tools can automate the steps above. For the rest of the article, we will use some examples based on the tools we’ve chosen at Momento, but you can achieve these steps using whatever tools are best suited to your particular environment.
+﻿
+At Momento, most of our infrastructure is deployed in AWS, so we have leaned into the AWS tools. So, for a given component of our application that runs on EC2 and is deployed via CloudFormation, we use:
+﻿
+AWS CodePipeline for defining and executing the stages
+AWS CodeBuild for executing individual build steps
+AWS Elastic Container Registry for releasing the new docker image for the component
+AWS CloudFormation for deploying the new versions to each cell
+AWS Step Functions to monitor alarms during the "bake" step and decide whether it’s safe to deploy to the next cell
+Figure 3: Deployment Stages Implementation - CloudFormation Flavor
+﻿
+For a Kubernetes-based component, we can achieve the same steps with only a minor variation: instead of CloudFormation, we use AWS Lambda to make API calls to k8s to deploy the new image to the cells.
+Figure 4: Deployment Stages Implementation - Kubernetes Flavor
+Hopefully, you see what we’re working toward here; despite differences in technology stacks for the components that make up our application, we can define a general-purpose template for what steps are involved in rolling out a new change. Then, we can implement those steps mainly using the same toolchain, with minor modifications for specific steps. Standardizing a few things about the build life cycle across all of our components will allow us to build automation for these steps in a general way, meaning that we can reuse a lot of infrastructure code and that our deployments will be consistent and recognizable across all of our components.
+﻿
+Standardization - Build Targets
+So, how do we standardize the necessary steps across our various components? One valuable strategy is to define some standardized build targets and reuse them across all components. At Momento, we use a tried-and-true technology for this: Makefiles.
+﻿
+Makefiles are pretty simple, and they’ve been around forever. They work for this purpose just fine.
+Figure 5: Standardized Build Targets using Makefiles
+On the left, you can see a snippet from a Makefile for one of our Kotlin microservices. On the right is a snippet from a Makefile for a Rust service. The build commands are very different, but the important point is that we have the same exact list of targets on both of these.
+ 
+For example, we have a pipeline-build target, which controls what happens in the build step of the deployment process for that particular service. Then, we have some targets for a "cell bootstrap" and a "GCP cell bootstrap" because we can deploy to either AWS cells or GCP cells for Momento. The Makefile target names are the same; what this means is that other pieces of our infrastructure that are operating outside of these individual services now have this common lifecycle that they know they can rely on the existence of inside of each of the components that they need to interact with when we’re doing things like deploying.
+﻿
+Standardization - Cell Registry
+Another building block that helps us standardize our automation is a "cell registry." This is just a mechanism for giving us a list of all the cells we’ve created and the essential bits of metadata about them.
+Figure 6: TypeScript model for cell registry
+﻿
+﻿At Momento, we built our cell registry in TypeScript. We have about 100 lines of TypeScript that define a few simple interfaces that we can use to represent all of the data about our cells. We have a CellConfiguration interface, which is probably the most important one; it captures all the vital information about a given cell. Is this a prod cell or a developer cell? What region is it in? What are the DNS names of the endpoints in this cell? Is it an AWS cell or a GCP cell?
+
+
+
+We also have a MomentoOrg interface, which contains an array of CellConfigurations. So, the org is just a way to keep track of all the existing cells.
+
+
+
+Using the model provided by these interfaces, we can write just a bit more typescript code to instantiate them and create all the actual data about our cells. Here’s a snippet from that code:
+
+
+
+Figure 7: Cell registry data for our 'alpha' cell
+
+
+
+This is what the data might look like for our "alpha" cell. We’ve got a cell name, an account ID, the region, the DNS config, etc. Now, whenever we want to add a new cell, we can just enter this cell registry code and add a new entry to this array.
+
+
+
+Now that we have all of this data about our cells, we need to publish it somewhere that we can make it accessible from the rest of our infrastructure. Depending on your needs, you might do something sophisticated, like putting the data into a database you can query. We don’t need anything sophisticated, so we just store the data as JSON on S3.
+
+
+
+The final component of the cell registry is a small TypeScript library that knows how to retrieve this data from S3 and convert it back into a TypeScript object. We publish that library to a private npm repository, and we can consume it from anywhere else in our infrastructure code. This allows us to start building some generalization patterns across all of our infrastructure automation; we can loop over all the cells and configure the same automation for each one.
+
+
+
+Standardization - Cell Bootstrap Script
+
+The last piece of standardization we use to generalize our automation is a "cell bootstrap script." Deploying all of the components of an application to a new cell can be very challenging, time-consuming, and error-prone. However, a cell bootstrap script can simplify the process and ensure consistency from one cell to the next.
+
+
+
+Assuming that the source code for each of your application components lives in a git repo, then, given the building blocks above, the logic of bootstrapping a new cell is as simple as this:
+
+
+
+Look up all the cell metadata that we need for this cell (e.g., AWS account ID, DNS configuration, etc.) using the cell registry
+
+For each application component:
+
+Clone the git repo for that component
+
+Run the standardized cell-bootstrap target from the Makefile
+
+Figure 8: Cell bootstrap script
+
+
+
+With just five lines of code, this script offers a generic and extensible solution for deploying new cells of the application. If you introduce new components to your application, the script remains adaptable and ensures a straightforward and consistent deployment process.
+
+
+
+Putting It All Together
+
+Now that we’ve defined some standardized building blocks to help us organize the information about our cells and generalize various life cycle tasks for our application components, it is time to revisit our list of the five problems we need to solve to automate our infrastructure across all our cells.
+
+
+
+Isolation
+
+The easiest way to ensure isolation between your cells in an AWS environment is to create a separate AWS account for each cell. At first, this may seem daunting if you are not used to managing multiple accounts. However, AWS's tooling today is very mature, making it easier than you might imagine.
+
+
+
+Deploying a cell within a dedicated AWS account ensures isolation from your other cells as the default posture. You would have to set up complex cross-account IAM policies for one cell to interact with another. Conversely, if you deploy multiple cells into a single AWS account, you will need to set up complex IAM policies to prevent the cells from being able to interact with one another. IAM policy management is one of the most challenging parts of working with AWS, so any time you can avoid the need to do so, that will save you time and headaches.
+
+
+
+Another benefit of using multiple accounts is that you can link the accounts together using AWS Organizations and then visualize and analyze your costs by cell using AWS Cost Explorer. If you instead choose to deploy multiple cells into a single AWS account, you must carefully tag the resources associated with each cell to view per-cell costs. Using multiple accounts allows you to get this for free.
+
+Figure 9: AWS Cost Explorer view of costs for each cell account
+
+
+
+One challenge that goes hand-in-hand with cellular architecture is routing. When you have multiple isolated cells, each running a copy of your application, you must choose a strategy for routing traffic from your users to the desired cells.
+
+
+
+If your users interact with your application through an SDK or other client software that you provide, then one easy way to route traffic to individual cells is to use unique DNS names for each cell. This is the approach we use at Momento; when our users create authentication tokens, we include the DNS name for the appropriate cell for that user as a claim inside of the token, and then our client libraries can route the traffic based on that information.
+
+
+
+However, this approach will only work for some use cases. If your users are interacting with your service through a web browser, you likely want to give them a single DNS name that they can visit in the browser so that they don’t need to be aware of your cells. In this scenario, creating a thin routing layer to direct the traffic becomes necessary.
+
+Figure 10: Routing layer for cell isolationThe routing layer should be as tiny as possible. It should contain the bare minimum logic to identify a user (based on some information in the request), determine which cell they should be routed to, and then proxy or redirect the request accordingly.
+
+
+
+This routing layer provides a simpler user experience (users don’t need to know about your cells), but it comes at the cost of a new, global component in your architecture that you must maintain and monitor. It also becomes a single point of failure, which you can otherwise largely avoid by using a cellular architecture. This is why you should strive to keep it as small and simple as possible.
+
+
+
+One nice advantage of having such a routing layer, though, is it makes it possible to transparently migrate a customer from one cell to another. Suppose a user outgrows one cell, and you would like to move them to a larger or less crowded one. In that case, you can prepare the new cell for their usage and then deploy a change to the routing logic/configuration that will redirect their traffic without them knowing anything is happening.
+
+
+
+New Cells
+
+If you followed along in our Standardization sections above, you have probably intuited that we’ve already done most of the work to solve the problem of how to create new cells. All we need to do is:
+
+
+
+Create a new AWS account in our Organization
+
+Add that account to our cell registry
+
+Run the cell bootstrap script to build and deploy all of the components
+
+That’s it! We have a new cell. Because we standardized the build life cycle steps in the Makefiles for each component, the deployment logic is very generalized and takes little effort to get a new cell off the ground.
+
+
+
+Deployments
+
+Deployments are probably the most challenging problem to solve for any application architecture, but this is especially true for cellular architecture. Thankfully, in recent years, major advancements in infrastructure-as-code tooling have made some of these challenges more approachable.
+
+
+
+In years past, most IaC tools used a declarative configuration syntax (such as YAML or JSON) to define the resources you wished to create. However, the more recent trends have provided developers with a way to express infrastructure definition using real programming languages. Instead of grappling with complex and verbose configuration files, developers now have the opportunity to leverage the expressiveness and power of familiar programming languages to define infrastructure components. Examples of this new class of tools include:
+
+
+
+AWS CDK (Cloud Development Kit) - for deploying CloudFormation infrastructure
+
+AWS cdk8s - for deploying Kubernetes infrastructure
+
+CDKTF (CDK for Terraform) - for deploying infrastructure via HashiCorp Terraform
+
+These tools let us use constructs like for loops to eliminate hundreds of lines of boilerplate YAML/JSON.
+
+
+
+Figure 11: CloudFormation JSON vs. CDK TypeScript
+
+
+
+Another incredibly powerful thing about expressing our infrastructure in a language like TypeScript is that we can use npm libraries as dependencies. This means that our IaC projects can add a dependency on our cell registry library and thus gain access to the array containing the metadata for all of our cells. Then, we can loop over that array to define the infrastructure steps we need for each cell. When new cells are added and the cell registry is updated, the infrastructure will be automatically updated as well!
+
+
+
+In particular, the combination of AWS CDK and AWS CodePipeline is extremely powerful. We can use a general-purpose pattern to define pipelines for each application component and set up the necessary build and deploy steps for each component while sharing most of the code.
+
+
+
+At Momento, we have a bit of TypeScript CDK code for each type of stage that we may need to add to an AWS CodePipeline (e.g., build a project, push a docker image, deploy a CloudFormation stack, deploy a new image to a Kubernetes cluster, etc.) We can push those stages together into an array and then loop over it to add the stages to each pipeline:
+
+
+
+Figure 12: CDK code to add stages to a CodePipeline
+
+We have created a special pipeline called the "pipeline of pipelines." It is a "meta" pipeline responsible for creating individual pipelines for each application component.
+
+Figure 13: Pipeline of Pipelines
+
+
+
+This repository serves as a single source of truth for all of our deployment logic. Any time a developer needs to change anything about our deployment infrastructure, it can all be done in this one spot. Any changes we make to our list of deployment steps (such as changing the order of the cells or making the "bake" step more sophisticated) will be automatically reflected in all of our component pipelines. When a new cell is added, the pipeline-of-pipelines runs and updates all of the component pipelines to add the new cell to the list of deployment steps.
+
+
+
+To help improve our availability story, we think carefully about what order to deploy to the production cells. Cells are organized into waves based on size, importance, and traffic levels. In the first wave, we deploy to pre-production cells, which serve as testing grounds for changes before they are promoted to production cells. If those deployments go well, we gradually deploy to larger and larger production cells. This staged deployment approach enables the controlled progression of changes and increases the likelihood that we will catch any issues before they impact many customers.
+
+
+
+Permissions
+
+To manage permissions into and out of the cell, we heavily rely on AWS’s SSO, now known as IAM Identity Center. This service gives us a single-sign-on splash page that all of our developers can log in to using their Google identity and then access the AWS console for any accounts they have permission to access. It also provides access to targeted accounts via command-line and AWS SDKs, making it easy to automate operational tasks.
+
+
+
+The management interface provides granular control over user access within each account. For example, roles such as "read-only" and "cell operator" are defined within a cell account, granting varying levels of permissions.
+
+Figure 14: AWS SSO Account Permissions
+
+
+
+Combining the capabilities of AWS SSO’s role mappings with CDK and our cell registry means we can fully automate both the inbound and outbound permissions for each cell account.
+
+
+
+For inbound permissions, we can loop over all of the developers and cell accounts in the registry and use CDK to grant the appropriate roles. When a new account is added to the cell registry, the automation automatically sets up the correct permissions. We loop over each cell in the registry for outbound permissions and grant access to resources like ECR images or private VPCs as required.
+
+
+
+Monitoring
+
+Monitoring a large number of cells can be difficult. It’s essential to have a monitoring story that ensures your operators can evaluate the service health across all of your cells in a single view; expecting your operators to look at metrics in each cell account is not a scalable solution.
+
+
+
+To solve this, you just need to choose a centralized metrics solution to which you can export your metrics from all of your cell accounts. The solution must also support grouping your metrics by a dimension, which in this case will be your cell name.
+
+
+
+Many metrics solutions provide this functionality; it is possible to aggregate metrics from multiple accounts to CloudWatch metrics in a central monitoring account. Plenty of third-party options exist, such as Datadog, New Relic, LightStep, and Chronosphere.
+
+
+
+Here is a screenshot of a LightStep dashboard where Momento’s metrics are grouped by their cell dimension:
+
+Additional Benefits
+
+Now that we’ve touched on how cellular architecture helps achieve high availability and how modern IaC and infrastructure tools can help you automate your cellular infrastructure, let’s note some additional benefits you can reap from this automation.
+
+
+
+One key benefit is the ability to spin up new cells very quickly. With the cell bootstrap script described in this article, we can deploy a new cell from the ground up in hours. Without the foundational standardization and automation, most of the steps of this process would have to be done by hand and could easily take weeks. For startups and small companies, the ability to be agile and add a new cell rapidly in response to a new customer inquiry can be a huge value proposition. It might make the difference between landing a big deal or missing out on it.
+
+
+
+Another huge value is the ability for developers to create personal cells in their own development accounts. Sometimes, there is no real way to test and debug a complex feature that relies on interactions between multiple services or components without a real environment.
+
+
+
+Some engineering organizations will try to solve this problem using a shared development environment, but this requires careful collaboration between developers and is prone to conflicts and downtime. Instead, with our cell bootstrap script, developers can bring up and tear down a fully operational development deployment of the application within a single day. This agile approach minimizes disruptions and maximizes productivity, allowing developers to focus on their tasks without inadvertently impacting others.
+
+
+
+No One Size Fits All
+
+In this article, we’ve discussed several tools and technologies we have chosen to automate our cellular infrastructure. But it’s important to point out that for any given technology mentioned in this article, plenty of alternative choices are available. For example, while Momento uses several AWS tools, the other major cloud providers, such as GCP and Azure, offer similar products for each relevant goal.
+
+
+
+Furthermore, you may choose to only automate a subset of the things we have chosen to automate, or you may choose to automate even more beyond what we have outlined here! The moral of the story is that you should choose the level of automation that makes sense for your business and the tools that will fit most seamlessly into your environment.
+
+
+
+Summary
+
+Cellular architecture can benefit your customers regarding availability and ensure you hit your SLAs. It’s also valuable for your business’s agility and engineering velocity. Automating these processes only requires solving a few key problems presented in this article and a little work to standardize some things across your application components. 
+
+
+
+Thanks to the changes in the infrastructure as code space, automation is somewhat simpler today, as long as you take those opportunities to standardize a few things about how you define your components.
