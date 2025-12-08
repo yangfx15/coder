@@ -61,6 +61,6 @@ func printTree(root *TreeNode) {
 		return
 	}
 	printTree(root.Left)
-	fmt.Printf("%v,", root.Val)
+	fmt.Printf("%v, ", root.Val)
 	printTree(root.Right)
 }
