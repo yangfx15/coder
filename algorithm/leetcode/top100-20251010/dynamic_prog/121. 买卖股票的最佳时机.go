@@ -23,16 +23,10 @@ import "fmt"
 
 func maxProfit(prices []int) int {
 	var res int
-	maxNum := -1
+	minPrice := prices[0]
 	for i := 1; i < len(prices); i++ {
-		if (maxNum == -1 && prices[i] > prices[i-1]) || (maxNum != -1 && prices[i] > maxNum) {
-			incrPrice := prices[i] - prices[i-1]
-			if maxNum != -1 {
-				incrPrice = prices[i] - maxNum
-			}
-			res += incrPrice
-			maxNum = prices[i]
-		}
+		res = max(res, prices[i]-minPrice)
+		minPrice = min(minPrice, prices[i])
 	}
 	return res
 }
