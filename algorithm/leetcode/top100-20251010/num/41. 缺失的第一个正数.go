@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 //给你一个未排序的整数数组 nums ，请你找出其中没有出现的最小的正整数。
 //
 //请你实现时间复杂度为 O(n) 并且只使用常数级别额外空间的解决方案。
@@ -26,6 +28,42 @@ package main
 //1 <= nums.length <= 105
 //-231 <= nums[i] <= 231 - 1
 
-func firstMissingPositive(nums []int) int {
+func abs(a int) int {
+	if a >= 0 {
+		return a
+	}
+	return -a
+}
 
+func firstMissingPositive(nums []int) int {
+	n := len(nums)
+	// 先把所有值置为正数，如果当前数不属于有效索引，就置为数组一个不存在的数
+	for i := 0; i < n; i++ {
+		if nums[i] <= 0 {
+			nums[i] = n + 1
+		}
+	}
+
+	// 有效值：正整数1~n，所以当某个位置有值时，就修改该值为0
+	for i := 0; i < n; i++ {
+		cur := abs(nums[i])
+		if cur >= 1 && cur <= n {
+			// 把这个数置为负数
+			nums[cur-1] = -abs(nums[cur-1])
+		}
+	}
+
+	for i := 0; i < n; i++ {
+		if nums[i] >= 0 {
+			return i + 1
+		}
+	}
+	return n + 1
+}
+
+func main() {
+	fmt.Println(firstMissingPositive([]int{1, 2, 0}))
+	fmt.Println(firstMissingPositive([]int{3, 4, -1, 1}))
+	fmt.Println(firstMissingPositive([]int{7, 8, 9, 11, 12}))
+	fmt.Println(firstMissingPositive([]int{1}))
 }

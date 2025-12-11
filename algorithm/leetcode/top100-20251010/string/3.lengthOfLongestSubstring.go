@@ -48,13 +48,6 @@ func lengthOfLongestSubstring(s string) int {
 	return longest
 }
 
-func max(a, b int) int {
-	if a > b {
-		return a
-	}
-	return b
-}
-
 func main() {
 	fmt.Println(lengthOfLongestSubstring("abcabcbb"))
 	fmt.Println(lengthOfLongestSubstring("bbbbb"))
