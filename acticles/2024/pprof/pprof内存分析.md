@@ -184,7 +184,7 @@ Showing top 20 nodes out of 106 (cum >= 122316.23MB)
 
 ![golang-memory-pprof.png](imgs/golang-memory-pprof.png)
 
-每一个方块为pprof记录的一个函数调用栈，指向方块的箭头上的数字是记录的该栈累积分配的内存向，从方块指出的 箭头上的数字为该函数调用的其他函数累积分配的内存。他们之间的差值可以简单理解为本函数除调用其他函数外，自 身分配的。方块内部的数字也体现了这一点，其数字为:`(自身分配的内存 of 该函数累积分配的内存)`。
+每一个方块为pprof记录的一个函数调用栈，指向方块的箭头上的数字是记录的该栈累积分配的内存向，从方块指出的 箭头上的数字为该函数调用的其他函数累积分配的内存。他们之间的差值可以简单理解为本函数除调用其他函数外，自身分配的。方块内部的数字也体现了这一点，其数字为:`(自身分配的内存 of 该函数累积分配的内存)`。
 
 
 
@@ -435,3 +435,48 @@ Flame Graph（火焰图）它是可动态的，调用顺序由上到下（A -> B
 ![image-20240226162912649](imgs/image-20240226162912649.png)
 
 这样子我们就可以根据不同函数的多维度层级进行分析，能够更好的观察其流转并发现问题。
+
+
+
+
+
+2025-12-11 周四
+
+实际操作 yunjing-video-agent：
+
+`go tool pprof -alloc_space http://43.145.25.244:8080/debug/pprof/heap` 
+
+![image-20251211113115085](imgs/image-20251211113115085.png)
+
+`go tool pprof -inuse_space http://43.145.25.244:8080/debug/pprof/heap`
+
+![image-20251211113151233](imgs/image-20251211113151233.png)
+
+
+
+运行一段时间后：
+
+![image-20251211164932971](imgs/image-20251211164932971.png)
+
+查看函数业务：
+
+![image-20251211165033022](imgs/image-20251211165033022.png)
+
+
+
+输出对比图：
+
+12:20 `go tool pprof -alloc_space -output pprof.heap1 http://43.145.25.244:8080/debug/pprof/heap`
+
+在 `C:\Users\Leo\pprof` 目录下生成了：pprof.yunjing-video-agent.alloc_objects.alloc_space.inuse_objects.inuse_space.024.pb.gz
+
+14:40 `go tool pprof -alloc_space -output pprof.heap1 http://43.145.25.244:8080/debug/pprof/heap`
+
+在 `C:\Users\Leo\pprof` 目录下生成了：pprof.yunjing-video-agent.alloc_objects.alloc_space.inuse_objects.inuse_space.025.pb.gz
+
+对比两个时间点的内存增长：
+
+`go tool pprof -base pprof.yunjing-video-agent.alloc_objects.alloc_space.inuse_objects.inuse_space.025.pb.gz pprof.yunjing-video-agent.alloc_objects.alloc_space.inuse_objects.inuse_space.024.pb.gz`
+
+![image-20251211144343851](imgs/image-20251211144343851.png)
+
