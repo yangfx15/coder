@@ -25,27 +25,21 @@ import "fmt"
 // 0 <= nums.length <= 105
 // -109 <= nums[i] <= 109
 func longestConsecutive(nums []int) int {
-	rd := make(map[int]int, 0)
+	rd := make(map[int]bool, 0)
 	for _, num := range nums {
-		//if v, ok := rd[num-1]; ok {
-		//	rd[num] = v + 1
-		//	continue
-		//}
-		rd[num] = 1
+		rd[num] = true
 	}
-	//fmt.Println(rd)
 	var maxV int
-	for k, v := range rd {
-		fmt.Printf("k:%v, v:%v\n", k, v)
-		delete(rd, k)
-		curKey, curMax := k+1, 1
-		if _, ok := rd[curKey]; ok {
-			curMax++
-			delete(rd, curKey)
-			fmt.Printf("curKey:%v, curMax:%v\n", curKey, curMax)
+	for _, num := range nums {
+		if rd[num-1] {
+			continue
 		}
-		if curMax > maxV {
-			maxV = curMax
+		curNum := num + 1
+		for rd[curNum] {
+			curNum ++
+		}
+		if curNum-num > maxV {
+			maxV = curNum - num
 		}
 	}
 	return maxV
@@ -53,6 +47,6 @@ func longestConsecutive(nums []int) int {
 
 func main() {
 	fmt.Println(longestConsecutive([]int{100, 4, 200, 1, 3, 2}))
-	//fmt.Println(longestConsecutive([]int{0, 3, 7, 2, 5, 8, 4, 6, 0, 1}))
-	//fmt.Println(longestConsecutive([]int{1, 0, 1, 2}))
+	fmt.Println(longestConsecutive([]int{0, 3, 7, 2, 5, 8, 4, 6, 0, 1}))
+	fmt.Println(longestConsecutive([]int{1, 0, 1, 2}))
 }
