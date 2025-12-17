@@ -56,6 +56,43 @@ var Node4 = &TreeNode{
 	},
 }
 
+// Node5 = [3,5,1,6,2,0,8,null,null,7,4]
+var Node5 = &TreeNode{
+	Val: 3,
+	Left: &TreeNode{
+		Val:  5,
+		Left: &TreeNode{Val: 6},
+		Right: &TreeNode{Val: 2,
+			Left:  &TreeNode{Val: 7},
+			Right: &TreeNode{Val: 4},
+		},
+	},
+	Right: &TreeNode{
+		Val:   1,
+		Left:  &TreeNode{Val: 0},
+		Right: &TreeNode{Val: 8},
+	},
+}
+
+// Node6 = [5,4,8,11,null,13,4,7,2,null,null,5,1]
+var Node6 = &TreeNode{
+	Val: 5,
+	Left: &TreeNode{
+		Val: 4,
+		Left: &TreeNode{Val: 11,
+			Left:  &TreeNode{Val: 7},
+			Right: &TreeNode{Val: 2},
+		},
+	},
+	Right: &TreeNode{Val: 8,
+		Left: &TreeNode{Val: 13},
+		Right: &TreeNode{Val: 4,
+			Left:  &TreeNode{Val: 5},
+			Right: &TreeNode{Val: 1},
+		},
+	},
+}
+
 func printTree(root *TreeNode) {
 	if root == nil {
 		return
