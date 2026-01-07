@@ -23,48 +23,46 @@ import "fmt"
 
 func canFinish(numCourses int, prerequisites [][]int) bool {
 	// 记录课程的先导课程数量 & 总课程数
-	record, courTotal, total := make(map[int]int, 0), make(map[int]int, 0), make(map[int]struct{}, 0)
-	for _, cour := range prerequisites {
-		c1, c2 := cour[0], cour[1]
-		courTotal[c2] = c1
-		total[c1], total[c2] = struct{}{}, struct{}{}
-		record[c1]++
+	preCourse, postCourse := make(map[int]int, 0), make(map[int][]int, 0)
+	for _, course := range prerequisites {
+		c1, c2 := course[0], course[1]
+
+		// 计算c1的先导课程
+		preCourse[c1]++
+
+		// 学完c2学c1
+		postCourse[c2] = append(postCourse[c2], c1)
 	}
 
-	var cours []int
-	for k := range total {
-		// 记录不需要先导课程的
-		if record[k] == 0 {
-			cours = append(cours, k)
+	// 记录无需先导的课程
+	couldLearnCour, finished := []int{}, 0
+	for i := 0; i < numCourses; i++ {
+		if preCourse[i] == 0 {
+			couldLearnCour = append(couldLearnCour, i)
+			finished++
 		}
 	}
 
-	fmt.Println(record)
-	fmt.Println(courTotal)
+	// 开始学习
+	for len(couldLearnCour) > 0 {
+		cur := couldLearnCour[0]
+		couldLearnCour = couldLearnCour[1:]
 
-	learnNum := 0
-	for len(cours) > 0 {
-		size := len(cours)
-		learnNum += size
-		fmt.Println(cours)
-
-		for i := 0; i < size; i++ {
-			cour := cours[0]
-			cours = cours[1:]
-			tail := courTotal[cour]
-			record[tail]--
-
-			if record[tail] == 0 {
-				cours = append(cours, tail)
+		// 学完当前，就更新后续课程的先导数
+		for _, c := range postCourse[cur] {
+			preCourse[c]--
+			if preCourse[c] <= 0 {
+				couldLearnCour = append(couldLearnCour, c)
+				finished++
 			}
 		}
 	}
 
-	return learnNum == len(total)
+	return finished == numCourses
 }
 
 func main() {
-	//fmt.Println(canFinish(2, [][]int{{1, 0}}))
-	//fmt.Println(canFinish(2, [][]int{{1, 0}, {0, 1}}))
+	fmt.Println(canFinish(2, [][]int{{1, 0}}))
+	fmt.Println(canFinish(2, [][]int{{1, 0}, {0, 1}}))
 	fmt.Println(canFinish(5, [][]int{{1, 4}, {2, 4}, {3, 1}, {3, 2}}))
 }

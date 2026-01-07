@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 实现获取 下一个排列 的函数，算法需要将给定数字序列重新排列成字典序中下一个更大的排列。
 //
 //如果不存在下一个更大的排列，则将数字重新排列成最小的排列（即升序排列）。
@@ -27,36 +25,39 @@ import "fmt"
 // 1234 -> 1243 -> 1324 -> 1342 -> 1423 ...
 // 4321 -> 1234
 
+// 1.从后往前，找到第一个比尾数小的数，交换两个数
+// 2.从当前数往后，找到第一个比尾数大的数，交换所有数
+// 1243 -> 1342 -> 1324
+// 1342 -> 1432 -> 1423
 func nextPermutation(nums []int) {
-	if len(nums) == 0 || len(nums) == 1 {
+	n := len(nums)
+	if n == 0 || n == 1 {
 		return
 	}
-	// 首先，从个位数开始找到一个比高位数大的数
-	firstSmaller := -1
-	for i := len(nums) - 1; i >= 1; i-- {
-		if nums[i] > nums[i-1] {
-			firstSmaller = i - 1
+	firstSmaller := 0
+	for i := n - 2; i >= 0; i-- {
+		if nums[i] < nums[i+1] {
+			firstSmaller = i
 			break
 		}
 	}
+	//fmt.Println("firstSmaller:", firstSmaller)
 
-	// 再从个位数开始找，找到第一个比当前数大的数，并交换两个数的值
-	// 如：1243 -> 1342
-	if firstSmaller >= 0 {
-		for i := len(nums) - 1; i > firstSmaller; i-- {
-			if nums[i] > nums[firstSmaller] {
-				nums[i], nums[firstSmaller] = nums[firstSmaller], nums[i]
-				break
-			}
+	for i := n - 1; i > firstSmaller; i-- {
+		if nums[i] > nums[firstSmaller] {
+			nums[i], nums[firstSmaller] = nums[firstSmaller], nums[i]
+			firstSmaller = firstSmaller + 1
+			break
 		}
 	}
+	//fmt.Println("firstSmaller:", firstSmaller)
 
-	// 从当前位置的下一个位置，往后交换位置
-	// 如：1342 -> 1324
-	for l, r := firstSmaller+1, len(nums)-1; l < r; l, r = l+1, r-1 {
-		nums[l], nums[r] = nums[r], nums[l]
+	// 交换
+	for i, j := firstSmaller, n-1; i < j; i, j = i+1, j-1 {
+		nums[i], nums[j] = nums[j], nums[i]
 	}
-	fmt.Println(nums)
+
+	//fmt.Println(nums)
 }
 
 func main() {
@@ -65,4 +66,5 @@ func main() {
 	nextPermutation([]int{1, 3, 2, 4})
 	nextPermutation([]int{4, 3, 2, 1})
 	nextPermutation([]int{1, 3, 2})
+	nextPermutation([]int{2, 3, 1})
 }

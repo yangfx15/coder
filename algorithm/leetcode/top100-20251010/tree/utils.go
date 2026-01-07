@@ -7,6 +7,18 @@ type TreeNode struct {
 	Left, Right *TreeNode
 }
 
+type Node struct {
+	Val      int
+	Children []*Node
+}
+
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
 // Node1 = [1,2,3,null,5,null,4]
 var Node1 = &TreeNode{
 	Val: 1,
